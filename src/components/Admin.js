@@ -2,7 +2,9 @@ import React from 'react'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 /*import Users from './Users'
 import UserDetails from './UserDetails'
+*/
 import Services from './Services'
+/*
 import ServiceDetails from './ServiceDetails'
 import ServiceCategories from './ServiceCategories'
 import ServiceCategoryDetails from './ServiceCategoryDetails'
@@ -21,6 +23,8 @@ const Admin = () =>
         <Router>
             <div className="row">
                 <div className="col-3">
+                    <Link to="/admin/services">Services</Link>
+                    <br/>
                     <Link to="/admin/faqs">FAQs</Link>
                     <br/>
                     <Link to="/admin/faqs/1">FAQ Details</Link>
@@ -30,6 +34,10 @@ const Admin = () =>
                     <Link to="/admin/faq-answers/1">FAQ Answers Details</Link>
                 </div>
                 <div className="col-9">
+                    <Route
+                        path="/admin/services"
+                        exact
+                        component={Services}/>
                     <Route
                         path="/admin/faqs"
                         exact
