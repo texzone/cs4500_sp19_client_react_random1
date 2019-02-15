@@ -1,3 +1,4 @@
+import MIDDLE_TIER_URL from '../Env.js'
 export default class ServiceService {
     static instance = null;
     static getInstance() {
@@ -7,9 +8,9 @@ export default class ServiceService {
         return this.instance
     }
     findServiceById = serviceId =>
-        fetch(`http://localhost:8080/api/services/${serviceId}`)
+        fetch(MIDDLE_TIER_URL + "/api/services/" + serviceId)
             .then(response => response.json())
     findAllServices = () =>
-        fetch("http://localhost:8080/api/services")
+        fetch(MIDDLE_TIER_URL + "/api/services")
             .then(response => response.json())
 }

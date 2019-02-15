@@ -1,4 +1,4 @@
-
+import MIDDLE_TIER_URL from '../Env.js'
 export default class FAQService {
     static instance = null;
     static getInstance() {
@@ -8,9 +8,9 @@ export default class FAQService {
         return this.instance
     }
     findFAQById = id =>
-        fetch(`http://localhost:8080/api/faqs/${id}`)
+        fetch(MIDDLE_TIER_URL + "/api/faqs/" + id)
             .then(response => response.json())
     findAllFAQs = () =>
-        fetch("http://localhost:8080/api/faqs")
+        fetch(MIDDLE_TIER_URL + "/api/faqs")
             .then(response => response.json())
 }
