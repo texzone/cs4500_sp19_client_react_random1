@@ -24,7 +24,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-router-dom": "^4.3.1",
-    "bootstrap": "^4.2.1"
+    "bootstrap": "^4.2.1",
+    "react-router-dom": "^4.3.1"
   }
 }
