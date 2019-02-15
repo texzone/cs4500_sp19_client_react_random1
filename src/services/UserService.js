@@ -1,3 +1,4 @@
+import MIDDLE_TIER_URL from '../Env.js'
 export default class UserService {
     static instance = null;
     static getInstance() {
@@ -7,9 +8,9 @@ export default class UserService {
         return this.instance
     }
     findUserById = userId =>
-        fetch(`http://localhost:8080/api/users/${userId}`)
+        fetch(MIDDLE_TIER_URL + "/api/users/`" + userId)
             .then(response => response.json())
     findAllUsers = () =>
-        fetch("http://localhost:8080/api/users")
+        fetch(MIDDLE_TIER_URL + "api/users")
             .then(response => response.json())
 }
