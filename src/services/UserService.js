@@ -8,9 +8,9 @@ export default class UserService {
         return this.instance
     }
     findUserById = userId =>
-        fetch(MIDDLE_TIER_URL + "/api/users/`" + userId)
+        fetch(MIDDLE_TIER_URL + "/api/users/" + userId)
             .then(response => response.json())
     findAllUsers = () =>
-        fetch(MIDDLE_TIER_URL + "api/users")
+        fetch(MIDDLE_TIER_URL + "/api/users")
             .then(response => response.json())
 }
