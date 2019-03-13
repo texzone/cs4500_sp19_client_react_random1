@@ -13,4 +13,7 @@ export default class FAQService {
     findAllFAQs = () =>
         fetch(MIDDLE_TIER_URL + "/api/faqs")
             .then(response => response.json())
-}
+    filterFAQs = filterParams =>
+        fetch(MIDDLE_TIER_URL + "/api/faqs/filter?title=" + filterParams.title + "&question=" + filterParams.question)
+        .then(response => response.json())
+};

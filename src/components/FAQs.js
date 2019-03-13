@@ -17,6 +17,33 @@ class FAQs extends React.Component {
                 })
             )
     }
+
+
+
+    searchFAQs() {
+     console.log('Click happened');
+     const titleInput = document.getElementById('titleInput');
+     const questionInput = document.getElementById('questionInput');
+     var title = titleInput.value
+     var question = questionInput.value
+     if(title === "" && question === "") {
+       this.faqService
+           .findAllFAQs()
+           .then(results =>
+               this.setState({
+                   faqs: results
+               })
+           )
+     }
+     this.faqService
+         .filterFAQs({title: title, question: question})
+         .then(results =>
+             this.setState({
+                 faqs: results
+             })
+         )
+   }
+
     render() {
         return(
             <div>
@@ -25,6 +52,24 @@ class FAQs extends React.Component {
                     <tr>
                         <th>Title</th>
                         <th>Question</th>
+                    </tr>
+                    <tr>
+                        <th>
+                          <input
+                            type="text"
+                            id="titleInput"
+                            placeholder="Title"
+                            title="Type in a name">
+                          </input>
+                        </th>
+                        <th>
+                          <input
+                            type="text"
+                            id="questionInput"
+                            placeholder="Question"
+                            title="Type in a name">
+                          </input>
+                        </th>
                     </tr>
                     <tbody>
                     {
@@ -37,6 +82,11 @@ class FAQs extends React.Component {
                             )
                     }
                     </tbody>
+                    <tr>
+                      <td>
+                        <button onClick={() => this.searchFAQs()}>Search</button>
+                      </td>
+                    </tr>
                 </table>
             </div>
         )
