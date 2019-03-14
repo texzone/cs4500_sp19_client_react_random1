@@ -31,9 +31,10 @@ class FAQs extends React.Component {
            .then(results =>
                this.setState(prevState => ({
                    faqs: results,
-                   searchButtonDisabled: prevState.searchButtonDisabled
+                   searchButtonDisabled: false
                }))
            )
+           return;
      }
      this.faqService
          .filterFAQs({title: title, question: question})
