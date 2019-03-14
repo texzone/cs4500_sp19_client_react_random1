@@ -5,7 +5,8 @@ class FAQs extends React.Component {
         super(props)
         this.faqService = FAQService.getInstance()
         this.state = {
-            faqs: []
+            faqs: [],
+            searchButtonDisabled: false
         }
     }
     componentDidMount() {
@@ -13,15 +14,13 @@ class FAQs extends React.Component {
             .findAllFAQs()
             .then(results =>
                 this.setState({
-                    faqs: results
+                    faqs: results,
+                    searchButtonDisabled: false
                 })
             )
     }
 
-
-
     searchFAQs() {
-     console.log('Click happened');
      const titleInput = document.getElementById('titleInput');
      const questionInput = document.getElementById('questionInput');
      var title = titleInput.value
@@ -30,17 +29,34 @@ class FAQs extends React.Component {
        this.faqService
            .findAllFAQs()
            .then(results =>
-               this.setState({
-                   faqs: results
-               })
+               this.setState(prevState => ({
+                   faqs: results,
+                   searchButtonDisabled: prevState.searchButtonDisabled
+               }))
            )
      }
      this.faqService
          .filterFAQs({title: title, question: question})
          .then(results =>
-             this.setState({
-                 faqs: results
-             })
+             this.setState(prevState => ({
+                 faqs: results,
+                 searchButtonDisabled: !prevState.searchButtonDisabled
+             }))
+         )
+   }
+
+   clearSearch() {
+     const titleInput = document.getElementById('titleInput');
+     const questionInput = document.getElementById('questionInput');
+     titleInput.value = ""
+     questionInput.value = ""
+     this.faqService
+         .findAllFAQs()
+         .then(results =>
+             this.setState(prevState => ({
+                 faqs: results,
+                 searchButtonDisabled: false
+             }))
          )
    }
 
@@ -84,7 +100,10 @@ class FAQs extends React.Component {
                     </tbody>
                     <tr>
                       <td>
-                        <button onClick={() => this.searchFAQs()}>Search</button>
+                        <div id="searchButtons">
+                          <button id="search" disabled={this.state.searchButtonDisabled} onClick={() => this.searchFAQs()}>Search</button>
+                          <button id="clearSearch" disabled={!this.state.searchButtonDisabled} onClick={() => this.clearSearch()}>Clear Search</button>
+                        </div>
                       </td>
                     </tr>
                 </table>
