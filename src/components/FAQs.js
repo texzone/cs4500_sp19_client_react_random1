@@ -79,7 +79,7 @@ class FAQs extends React.Component {
         }
         this.faqService
             .addFAQ({title: title, question: question})
-            .then(this.refreshFAQs());
+            .then(() => this.refreshFAQs());
        titleInput.value = ""
        questionInput.value = ""
    }
@@ -94,7 +94,7 @@ class FAQs extends React.Component {
        }
        this.faqService
            .updateFAQ({title: title, question: question}, id)
-           .then(this.refreshFAQs());
+           .then(() => this.refreshFAQs());
        titleInput.value = "";
        questionInput.value = "";
    }
