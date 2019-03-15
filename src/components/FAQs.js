@@ -20,6 +20,13 @@ class FAQs extends React.Component {
             )
     }
 
+    refreshFAQs() {
+        this.faqService.findAllFAQs().then(results =>
+        this.setState({
+            faqs: results
+                      }))
+    }
+
     searchFAQs() {
      const titleInput = document.getElementById('titleInput');
      const questionInput = document.getElementById('questionInput');
@@ -61,6 +68,20 @@ class FAQs extends React.Component {
          )
    }
 
+   addFAQ() {
+        console.log('Add FAQ Click happened');
+        const titleInput = document.getElementById('titleInput');
+        const questionInput = document.getElementById('questionInput');
+        var title = titleInput.value;
+        var question = questionInput.value;
+        if (title == "" || question == "") {
+            alert("Please add a question")
+        }
+        this.faqService
+            .addFAQ({title: title, question: question})
+            .then(this.refreshFAQs());
+   }
+
     render() {
         return(
             <div>
@@ -69,6 +90,7 @@ class FAQs extends React.Component {
                     <tr>
                         <th>Title</th>
                         <th>Question</th>
+                        <th></th>
                     </tr>
                     <tr>
                         <th>
@@ -87,6 +109,10 @@ class FAQs extends React.Component {
                             title="Type in a name">
                           </input>
                         </th>
+                        <th>
+                            <button onClick={() => this.addFAQ()}>Add</button>
+                            <button>Save</button>
+                        </th>
                     </tr>
                     <tbody>
                     {
@@ -95,6 +121,10 @@ class FAQs extends React.Component {
                                 <tr key={faq.id}>
                                     <td>{faq.title}</td>
                                     <td>{faq.question}</td>
+                                    <td>
+                                        <button>Delete</button>
+                                        <button>Edit</button>
+                                    </td>
                                 </tr>
                             )
                     }

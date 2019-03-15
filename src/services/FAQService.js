@@ -16,4 +16,7 @@ export default class FAQService {
     filterFAQs = filterParams =>
         fetch(MIDDLE_TIER_URL + "/api/faqs/filter?title=" + filterParams.title + "&question=" + filterParams.question)
         .then(response => response.json())
+    addFAQ = (newFAQ) =>
+        fetch(MIDDLE_TIER_URL + "/api/faqs/create?title=" + newFAQ.title + "&question=" + newFAQ.question)
+            .then(response => response.json());
 };
