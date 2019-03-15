@@ -5,7 +5,8 @@ class FAQs extends React.Component {
         super(props)
         this.faqService = FAQService.getInstance()
         this.state = {
-            faqs: []
+            faqs: [],
+            searchButtonDisabled: false
         }
     }
     componentDidMount() {
@@ -13,10 +14,53 @@ class FAQs extends React.Component {
             .findAllFAQs()
             .then(results =>
                 this.setState({
-                    faqs: results
+                    faqs: results,
+                    searchButtonDisabled: false
                 })
             )
     }
+
+    searchFAQs() {
+     const titleInput = document.getElementById('titleInput');
+     const questionInput = document.getElementById('questionInput');
+     var title = titleInput.value
+     var question = questionInput.value
+     if(title === "" && question === "") {
+       this.faqService
+           .findAllFAQs()
+           .then(results =>
+               this.setState(prevState => ({
+                   faqs: results,
+                   searchButtonDisabled: false
+               }))
+           )
+           return;
+     }
+     this.faqService
+         .filterFAQs({title: title, question: question})
+         .then(results =>
+             this.setState(prevState => ({
+                 faqs: results,
+                 searchButtonDisabled: !prevState.searchButtonDisabled
+             }))
+         )
+   }
+
+   clearSearch() {
+     const titleInput = document.getElementById('titleInput');
+     const questionInput = document.getElementById('questionInput');
+     titleInput.value = ""
+     questionInput.value = ""
+     this.faqService
+         .findAllFAQs()
+         .then(results =>
+             this.setState(prevState => ({
+                 faqs: results,
+                 searchButtonDisabled: false
+             }))
+         )
+   }
+
     render() {
         return(
             <div>
@@ -25,6 +69,24 @@ class FAQs extends React.Component {
                     <tr>
                         <th>Title</th>
                         <th>Question</th>
+                    </tr>
+                    <tr>
+                        <th>
+                          <input
+                            type="text"
+                            id="titleInput"
+                            placeholder="Title"
+                            title="Type in a name">
+                          </input>
+                        </th>
+                        <th>
+                          <input
+                            type="text"
+                            id="questionInput"
+                            placeholder="Question"
+                            title="Type in a name">
+                          </input>
+                        </th>
                     </tr>
                     <tbody>
                     {
@@ -37,6 +99,14 @@ class FAQs extends React.Component {
                             )
                     }
                     </tbody>
+                    <tr>
+                      <td>
+                        <div id="searchButtons">
+                          <button id="search" disabled={this.state.searchButtonDisabled} onClick={() => this.searchFAQs()}>Search</button>
+                          <button id="clearSearch" disabled={!this.state.searchButtonDisabled} onClick={() => this.clearSearch()}>Clear Search</button>
+                        </div>
+                      </td>
+                    </tr>
                 </table>
             </div>
         )
