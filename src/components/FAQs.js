@@ -8,8 +8,7 @@ class FAQs extends React.Component {
             faqs: [],
             searchButtonDisabled: false,
             pageNumber: 1,
-            itemsPerPage: 10,
-            //totalPages: Math.ceil(this.state.faqs.length / this.state.itemsPerPage)
+            itemsPerPage: 10
         }
     }
     componentDidMount() {
@@ -72,19 +71,19 @@ class FAQs extends React.Component {
     onChangeItemsPerPage() {
         var currButtons = document.getElementById("pageButtons").innerHTML = "";
         var eID = document.getElementById("selector");
-        var pageText = eID.text;
+        var pageText = eID.options[eID.selectedIndex].text;
 
-        if (pageText = "10") {
-            this.setState({itemsPerPage: 10})
+        if (pageText == "10") {
+            this.setState({itemsPerPage: 10, pageNumber: 1})
         }
-        if (pageText = "25") {
-            this.setState({itemsPerPage: 25})
+        if (pageText == "25") {
+            this.setState({itemsPerPage: 25, pageNumber: 1})
         }
-        if (pageText = "50") {
-            this.setState({itemsPerPage: 50})
+        if (pageText == "50") {
+            this.setState({itemsPerPage: 50, pageNumber: 1})
         }
-        if (pageText = "All") {
-            this.setState({itemsPerPage: 1000000})
+        if (pageText == "All") {
+            this.setState({itemsPerPage: 1000000, pageNumber: 1})
         }
     }
     previousPage() {
@@ -121,7 +120,7 @@ class FAQs extends React.Component {
                 button.id = "Button " + i;
                 button.value = i;
                 button.onclick = function() {
-                    this.setState({pageNumber: button.value})
+                    this.setState({pageNumber: i})
                 }.bind(this);
                 //var buttonPanel = document.getElementById("pageButtons");
                 //buttonPanel.appendChild(button);
