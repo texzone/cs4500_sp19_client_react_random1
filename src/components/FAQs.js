@@ -216,23 +216,27 @@ class FAQs extends React.Component {
                     }
                     </tbody>
                     <tr>
-                        <td>
-                            <div id = "dropdown" >
-                                <select id="selector" onChange={() => this.onChangeItemsPerPage()}>
-                                    <option value="1" selected="selected">10</option>
-                                    <option value="2">25</option>
-                                    <option value="3">50</option>
-                                    <option value="4">100</option>
-                                    <option value="5">All</option></select>
-                            </div>
-                            <button id="previous" onClick={() => this.previousPage()}>Previous</button>
-                            <div id="pageButtons"> </div>
-                            <button id="next" onClick={() => this.nextPage()}>Next</button>
-                            <div id="searchButtons">
-                                <button id="search" disabled={this.state.searchButtonDisabled} onClick={() => this.searchFAQs()}>Search</button>
-                                <button id="clearSearch" disabled={!this.state.searchButtonDisabled} onClick={() => this.clearSearch()}>Clear Search</button>
-                            </div>
-                        </td>
+                        <th><button id="previous" onClick={() => this.previousPage()}>Previous</button></th>
+                        <th><div id="pageButtons"> </div></th>
+                        <th><button id="next" onClick={() => this.nextPage()}>Next</button></th>
+                    </tr>
+                    <tr>
+                        <th>
+                          <div id = "dropdown" >
+                              <select id="selector" onChange={() => this.onChangeItemsPerPage()}>
+                                  <option value="1" selected="selected">10</option>
+                                  <option value="2">25</option>
+                                  <option value="3">50</option>
+                                  <option value="4">100</option>
+                                  <option value="5">All</option></select>
+                          </div>
+                        </th>
+                        <th>
+                              <div id="searchButtons">
+                                  <button id="search" disabled={this.state.searchButtonDisabled} onClick={() => this.searchFAQs()}>Search</button>
+                                  <button id="clearSearch" disabled={!this.state.searchButtonDisabled} onClick={() => this.clearSearch()}>Clear Search</button>
+                              </div>
+                        </th>
                     </tr>
                 </table>
             </div>)
