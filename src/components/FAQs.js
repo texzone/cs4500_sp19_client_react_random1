@@ -82,6 +82,12 @@ class FAQs extends React.Component {
             .then(this.refreshFAQs());
    }
 
+   deleteFAQ(id) {
+        console.log('Delete FAQ Click happened');
+        this.faqService.deleteFAQ(id)
+            .then(() => this.refreshFAQs());
+   }
+
     render() {
         return(
             <div>
@@ -122,7 +128,7 @@ class FAQs extends React.Component {
                                     <td>{faq.title}</td>
                                     <td>{faq.question}</td>
                                     <td>
-                                        <button>Delete</button>
+                                        <button onClick={() => this.deleteFAQ(faq.id)}>Delete</button>
                                         <button>Edit</button>
                                     </td>
                                 </tr>

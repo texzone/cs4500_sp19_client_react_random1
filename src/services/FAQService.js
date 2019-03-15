@@ -19,4 +19,6 @@ export default class FAQService {
     addFAQ = (newFAQ) =>
         fetch(MIDDLE_TIER_URL + "/api/faqs/create?title=" + newFAQ.title + "&question=" + newFAQ.question)
             .then(response => response.json());
+    deleteFAQ = (id) =>
+        fetch(MIDDLE_TIER_URL + "/api/faqs/delete/" + id, {method: 'delete'})
 };
