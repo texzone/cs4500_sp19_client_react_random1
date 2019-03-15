@@ -80,6 +80,23 @@ class FAQs extends React.Component {
         this.faqService
             .addFAQ({title: title, question: question})
             .then(this.refreshFAQs());
+       titleInput.value = ""
+       questionInput.value = ""
+   }
+
+   updateFAQ(id) {
+       const titleInput = document.getElementById('titleInput');
+       const questionInput = document.getElementById('questionInput');
+       var title = titleInput.value;
+       var question = questionInput.value;
+       if (title == "" & question == "") {
+
+       }
+       this.faqService
+           .updateFAQ({title: title, question: question}, id)
+           .then(this.refreshFAQs());
+       titleInput.value = "";
+       questionInput.value = "";
    }
 
    deleteFAQ(id) {
@@ -129,7 +146,7 @@ class FAQs extends React.Component {
                                     <td>{faq.question}</td>
                                     <td>
                                         <button onClick={() => this.deleteFAQ(faq.id)}>Delete</button>
-                                        <button>Edit</button>
+                                        <button onClick={() => this.updateFAQ(faq.id)}>Edit</button>
                                     </td>
                                 </tr>
                             )
