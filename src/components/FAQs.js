@@ -6,7 +6,10 @@ class FAQs extends React.Component {
         this.faqService = FAQService.getInstance()
         this.state = {
             faqs: [],
-            searchButtonDisabled: false
+            searchButtonDisabled: false,
+            pageNumber: 1,
+            itemsPerPage: 10,
+            //totalPages: Math.ceil(this.state.faqs.length / this.state.itemsPerPage)
         }
     }
     componentDidMount() {
@@ -14,7 +17,7 @@ class FAQs extends React.Component {
             .findAllFAQs()
             .then(results =>
                 this.setState({
-                    faqs: results,
+                    faqs: results.slice(),
                     searchButtonDisabled: false
                 })
             )
@@ -33,7 +36,7 @@ class FAQs extends React.Component {
      var title = titleInput.value
      var question = questionInput.value
      if(title === "" && question === "") {
-       this.faqService
+         this.faqService
            .findAllFAQs()
            .then(results =>
                this.setState(prevState => ({
@@ -52,7 +55,6 @@ class FAQs extends React.Component {
              }))
          )
    }
-
    clearSearch() {
      const titleInput = document.getElementById('titleInput');
      const questionInput = document.getElementById('questionInput');
@@ -67,6 +69,66 @@ class FAQs extends React.Component {
              }))
          )
    }
+    onChangeItemsPerPage() {
+        var currButtons = document.getElementById("pageButtons").innerHTML = "";
+        var eID = document.getElementById("selector");
+        var pageText = eID.text;
+
+        if (pageText = "10") {
+            this.setState({itemsPerPage: 10})
+        }
+        if (pageText = "25") {
+            this.setState({itemsPerPage: 25})
+        }
+        if (pageText = "50") {
+            this.setState({itemsPerPage: 50})
+        }
+        if (pageText = "All") {
+            this.setState({itemsPerPage: 1000000})
+        }
+    }
+    previousPage() {
+        if (this.state.pageNumber != 1) {
+            var temp = this.state.pageNumber - 1;
+            this.setState({pageNumber: temp })
+        }
+    }
+    nextPage() {
+        var totalPages = Math.ceil(this.state.faqs.length / this.state.itemsPerPage);
+        if (this.state.pageNumber + 1 <= totalPages) {
+            var temp = this.state.pageNumber + 1;
+            this.setState({pageNumber: temp })
+        }
+    }
+    choosePage(newPage) {
+        this.setState({pageNumber: newPage })
+
+    }
+    createPageButtons() {
+        var totalPages = Math.ceil(this.state.faqs.length / this.state.itemsPerPage);
+        var i;
+        //while (currButtons.firstChild) {
+        //    currButtons.removeChild(currButtons.firstChild);
+        //}
+        for (i = 1; i < totalPages + 1; i++) {
+            if ((document.getElementById("Button " + i)) == null)
+            {
+                console.log(i);
+                var button = document.createElement("BUTTON");
+                var buttonText = document.createTextNode("" + i);
+                button.appendChild(buttonText);
+                button.type = "button";
+                button.id = "Button " + i;
+                button.value = i;
+                button.onclick = function() {
+                    this.setState({pageNumber: button.value})
+                }.bind(this);
+                //var buttonPanel = document.getElementById("pageButtons");
+                //buttonPanel.appendChild(button);
+                document.getElementById("pageButtons").appendChild(button);
+            }
+        }
+    }
 
    addFAQ() {
         console.log('Add FAQ Click happened');
@@ -106,7 +168,8 @@ class FAQs extends React.Component {
    }
 
     render() {
-        return(
+        debugger;
+        let div = (
             <div>
                 <h3>Frequently Asked Questions</h3>
                 <table className="table">
@@ -117,20 +180,20 @@ class FAQs extends React.Component {
                     </tr>
                     <tr>
                         <th>
-                          <input
-                            type="text"
-                            id="titleInput"
-                            placeholder="Title"
-                            title="Type in a name">
-                          </input>
+                            <input
+                                type="text"
+                                id="titleInput"
+                                placeholder="Title"
+                                title="Type in a name">
+                            </input>
                         </th>
                         <th>
-                          <input
-                            type="text"
-                            id="questionInput"
-                            placeholder="Question"
-                            title="Type in a name">
-                          </input>
+                            <input
+                                type="text"
+                                id="questionInput"
+                                placeholder="Question"
+                                title="Type in a name">
+                            </input>
                         </th>
                         <th>
                             <button onClick={() => this.addFAQ()}>Add</button>
@@ -139,7 +202,7 @@ class FAQs extends React.Component {
                     </tr>
                     <tbody>
                     {
-                        this.state.faqs
+                        this.state.faqs.slice(   ((this.state.pageNumber * this.state.itemsPerPage) - this.state.itemsPerPage), ((this.state.pageNumber * this.state.itemsPerPage) - 1))
                             .map(faq =>
                                 <tr key={faq.id}>
                                     <td>{faq.title}</td>
@@ -153,16 +216,28 @@ class FAQs extends React.Component {
                     }
                     </tbody>
                     <tr>
-                      <td>
-                        <div id="searchButtons">
-                          <button id="search" disabled={this.state.searchButtonDisabled} onClick={() => this.searchFAQs()}>Search</button>
-                          <button id="clearSearch" disabled={!this.state.searchButtonDisabled} onClick={() => this.clearSearch()}>Clear Search</button>
-                        </div>
-                      </td>
+                        <td>
+                            <div id = "dropdown" >
+                                <select id="selector" onChange={() => this.onChangeItemsPerPage()}>
+                                    <option value="1" selected="selected">10</option>
+                                    <option value="2">25</option>
+                                    <option value="3">50</option>
+                                    <option value="4">100</option>
+                                    <option value="5">All</option></select>
+                            </div>
+                            <button id="previous" onClick={() => this.previousPage()}>Previous</button>
+                            <div id="pageButtons"> </div>
+                            <button id="next" onClick={() => this.nextPage()}>Next</button>
+                            <div id="searchButtons">
+                                <button id="search" disabled={this.state.searchButtonDisabled} onClick={() => this.searchFAQs()}>Search</button>
+                                <button id="clearSearch" disabled={!this.state.searchButtonDisabled} onClick={() => this.clearSearch()}>Clear Search</button>
+                            </div>
+                        </td>
                     </tr>
                 </table>
-            </div>
-        )
+            </div>)
+        this.createPageButtons()
+        return div;
     }
 }
 
