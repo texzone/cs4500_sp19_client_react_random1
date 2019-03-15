@@ -119,8 +119,8 @@ class FAQs extends React.Component {
                 button.type = "button";
                 button.id = "Button " + i;
                 button.value = i;
-                button.onclick = function() {
-                    this.setState({pageNumber: i})
+                button.onclick = function(e) {
+                    this.setState({pageNumber: e.target.value})
                 }.bind(this);
                 //var buttonPanel = document.getElementById("pageButtons");
                 //buttonPanel.appendChild(button);
