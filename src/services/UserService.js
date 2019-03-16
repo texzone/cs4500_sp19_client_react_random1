@@ -9,13 +9,13 @@ export default class UserService {
     }
 
     findUserById = userId =>
-        fetch(`https://cs4500-sp19-random1.herokuapp.com/api/users/${userId}`)
+        fetch(MIDDLE_TIER_URL + "/api/users/${userId}")
             .then(response => response.json())
     findAllUsers = () =>
-        fetch(`https://cs4500-sp19-random1.herokuapp.com/api/users`)
+        fetch(MIDDLE_TIER_URL + "/api/users")
             .then(response => response.json())
     createUser = user =>
-        fetch(`https://cs4500-sp19-random1.herokuapp.com/api/users`,
+        fetch(MIDDLE_TIER_URL + "/api/users",
             {
                 method: 'POST',
                 body: JSON.stringify(user),
@@ -23,7 +23,7 @@ export default class UserService {
             })
             .then(response => response.json())
     updateUser = user =>
-        fetch(`https://cs4500-sp19-random1.herokuapp.com/api/users/${user.id}`,
+        fetch(MIDDLE_TIER_URL + "/api/users/${user.id},
             {
                 method: 'PUT',
                 body: JSON.stringify(user),
@@ -31,7 +31,7 @@ export default class UserService {
             })
             .then(response => response.json())
     deleteUser = user =>
-        fetch(`https://cs4500-sp19-random1.herokuapp.com/api/users/${user.id}`,
+        fetch(MIDDLE_TIER_URL + "/api/users/${user.id}",
             {
                 method: 'DELETE',
             })
