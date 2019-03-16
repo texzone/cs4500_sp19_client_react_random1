@@ -23,7 +23,7 @@ export default class UserService {
             })
             .then(response => response.json())
     updateUser = user =>
-        fetch(MIDDLE_TIER_URL + "/api/users/${user.id},
+        fetch(MIDDLE_TIER_URL + "/api/users/${user.id}",
             {
                 method: 'PUT',
                 body: JSON.stringify(user),
