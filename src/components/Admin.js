@@ -60,6 +60,14 @@ const Admin = () =>
                         path="/admin/faq-answers/:id"
                         exact
                         component={FAQAnswerDetails}/>
+                    <Route
+                        path="/admin/users"
+                        exact
+                        component={Users}/>
+                    <Route
+                        path="/admin/users/:id"
+                        exact
+                        component={UserDetails}/>
                 </div>
             </div>
         </Router>

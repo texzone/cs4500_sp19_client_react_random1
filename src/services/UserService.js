@@ -1,3 +1,4 @@
+import MIDDLE_TIER_URL from '../Env.js'
 export default class UserService {
     static instance = null;
 
