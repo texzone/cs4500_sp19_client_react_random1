@@ -17,7 +17,6 @@ import FAQDetails from './FAQDetails'
 import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
-import UserDetails from './UserDetails'
 
 const Admin = () =>
     <div>
