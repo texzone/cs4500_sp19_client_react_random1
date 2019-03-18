@@ -1,39 +1,48 @@
 import MIDDLE_TIER_URL from '../Env.js'
 export default class UserService {
     static instance = null;
-
     static getInstance() {
-        if (UserService.instance === null) {
+        if(UserService.instance === null) {
             UserService.instance = new UserService()
         }
         return this.instance
     }
-
     findUserById = userId =>
-        fetch(MIDDLE_TIER_URL + "/api/users/${userId}")
+        fetch(MIDDLE_TIER_URL + '${userId}')
             .then(response => response.json())
     findAllUsers = () =>
-        fetch(MIDDLE_TIER_URL + "/api/users")
+        fetch(USER_API_URL)
             .then(response => response.json())
-    createUser = user =>
-        fetch(MIDDLE_TIER_URL + "/api/users",
-            {
-                method: 'POST',
-                body: JSON.stringify(user),
-                headers: {'content-type': 'application/json'}
-            })
-            .then(response => response.json())
-    updateUser = user =>
-        fetch(MIDDLE_TIER_URL + "/api/users/${user.id}",
-            {
-                method: 'PUT',
-                body: JSON.stringify(user),
-                headers: {'content-type': 'application/json'}
-            })
-            .then(response => response.json())
-    deleteUser = user =>
-        fetch(MIDDLE_TIER_URL + "/api/users/${user.id}",
-            {
-                method: 'DELETE',
-            })
+
+    createUser = (user) => {
+        return fetch(MIDDLE_TIER_URL, {
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            method: 'POST'
+        }).then(response => {
+            return response.json();
+        })
+    }
+
+    updateUser = (user) => {
+        return fetch(MIDDLE_TIER_URL + user.id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }).then(response => {
+            console.log(response)
+            return response.json();
+        });
+    }
+
+    deleteUser = (userId) => {
+        return fetch(MIDDLE_TIER_URL + "${userId}", {
+            method: 'DELETE'
+            }
+        );
+    }
 }

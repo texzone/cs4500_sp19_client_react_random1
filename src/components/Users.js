@@ -1,21 +1,28 @@
 import React from 'react'
 import UserService from '../services/UserService'
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
-
 class Users extends React.Component {
     constructor(props) {
-        super(props);
-        this.userService = UserService.getInstance();
+        super(props)
+        this.userService = UserService.getInstance()
         this.state = {
-            editingUser: {
-                username: '',
-                password: '',
-                firstName: '',
-                lastName: ''
-            },
-            users: []
+            users: [],
+            username: 'Username',
+            password: 'password',
+            firstName: 'First name',
+            lastName: 'Last name',
+            updateUserId: -1
         }
+
+        this.renderUsername = this.renderUsername.bind(this)
+        this.renderFirstName = this.renderFirstName.bind(this)
+        this.renderLastName = this.renderLastName.bind(this)
+        this.renderUser = this.renderUser.bind(this)
+        this.createUser = this.createUser.bind(this)
+        this.deleteUser = this.deleteUser.bind(this)
+        this.updateUser = this.updateUser.bind(this)
+
     }
+
 
     componentDidMount() {
         this.userService
@@ -26,89 +33,99 @@ class Users extends React.Component {
                 })
             )
     }
+    renderUsername(event) {
+        this.setState({
+            username: event.target.value
+        })
+    }
+    renderFirstName(event) {
+        this.setState({
+            firstName: event.target.value
+        })
+    }
+    renderLastName(event) {
+        this.setState({
+            lastName: event.target.value
+        })
+    }
+    renderUser(user) {
+        this.setState({
+            username: user.username,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            updateUserId: user.id
+        })
+    }
+    deleteUser(user) {
+        var userId = user.id
+        this.userService.deleteUser(userId).then(() =>
+            this.userService.findAllUsers()
+                .then(users =>
+                    this.setState({
+                        users: users
+                    })));
+    }
+    createUser() {
+        var newUser = {
+            username: this.state.username,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+        };
 
-    createUser = (user) =>
-        this.userService
-            .createUser(user)
-            .then(this.props.history.push("/admin/users/"));
-
-    saveUser = function (user) {
-        if (user.id) {
-            this.updateUser(user);
-        } else {
-            this.createUser(user);
-        }
-    };
-
-    updateUser = (user) =>
-        this.userService
-            .updateUser(user)
-            .then(this.props.history.push("/admin/users/"));
-
-    deleteUser = (user) =>
-        this.userService
-            .deleteUser(user)
-            .then(this.props.history.push("/admin/users/"));
-
+        this.userService.createUser(newUser).then(() =>
+            this.userService.findAllUsers()
+                .then(users =>
+                    this.setState({
+                        users: users
+                    })));
+    }
+    updateUser() {
+        var updatedUser = {
+            username: this.state.username,
+            firstName: this.state.firstName,
+            lastName:this.state.lastName,
+            id: this.state.updateUserId
+        };
+        this.userService.updateUser(updatedUser)
+            .then(() => this.userService.findAllUsers()
+                .then(users => {
+                    this.setState({
+                        users: users
+                    })
+                }));
+    }
     render() {
-        return (
+        return(
             <div>
                 <h3>Users</h3>
-
                 <table className="table">
-                    <tbody>
+                    <thead>
                     <tr>
-                        <td><input onChange={(e) =>
-                            this.setState({
-                                editingUser: {
-                                    id: this.state.editingUser.id,
-                                    username: e.target.value,
-                                    password: this.state.editingUser.password,
-                                    firstName: this.state.editingUser.firstName,
-                                    lastName: this.state.editingUser.lastName
-                                }
-                            })} className="form-control"
-                                   value={this.state.editingUser.username}/></td>
-                        <td><input onChange={(e) =>
-                            this.setState({
-                                editingUser: {
-                                    id: this.state.editingUser.id,
-                                    username: this.state.editingUser.username,
-                                    password: this.state.editingUser.password,
-                                    firstName: e.target.value,
-                                    lastName: this.state.editingUser.lastName
-                                }
-                            })} className="form-control"
-                                   value={this.state.editingUser.firstName}/></td>
-                        <td><input onChange={(e) =>
-                            this.setState({
-                                editingUser: {
-                                    id: this.state.editingUser.id,
-                                    username: this.state.editingUser.username,
-                                    password: this.state.editingUser.password,
-                                    firstName: this.state.editingUser.firstName,
-                                    lastName: e.target.value
-                                }
-                            })} className="form-control"
-                                   value={this.state.editingUser.lastName}/></td>
-                        <td>
-                            <button className="btn btn-success" onClick={() => {
-                                this.saveUser(this.state.editingUser)
-                            }}>Save
-                            </button>
-                            <button className="btn btn-warning" onClick={() => {
-                                this.setState({
-                                    editingUser: {
-                                        username: '',
-                                        password: '',
-                                        firstName: '',
-                                        lastName: ''
-                                    }
-                                });
-                            }}>Clear
-                            </button>
-                        </td>
+                        <th scope="col">Username</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th>&nbsp;</th>
                     </tr>
+                    <tr>
+                            <th><input type="text" onChange={this.renderUsername} value={this.state.username}
+                                       placeholder="username" readOnly={true}/></th>
+                            <th><input type="text" onChange={this.renderFirstName} value={this.state.firstName}
+                                       placeholder="firstName"/></th>
+                            <th><input type="text" onChange={this.renderLastName} value={this.state.lastName}
+                                       placeholder="lastName"/></th>
+                            <th>
+                                <button type="button" onClick={this.createUser}
+                                        className="btn btn-primary btn-block">Create
+                                </button>
+                            </th>
+                        <th>
+                            <button type="button" onClick={this.updateUser}
+                                    className="btn btn-primary btn-block">Save
+                            </button>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     {
                         this.state.users
                             .map(user =>
@@ -117,13 +134,11 @@ class Users extends React.Component {
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
                                     <td>
-                                        <button className="btn btn-primary" onClick={() => {
-                                            this.setState({editingUser: user});
-                                        }}>Edit
+                                        <button type="button" onClick={() => this.deleteUser(user)}
+                                                className="btn btn-primary btn-block">Delete
                                         </button>
-                                        <button className="btn btn-danger" onClick={
-                                            () => this.deleteUser(user)
-                                        }>Delete
+                                        <button type="button" onClick={() => this.renderUser(user)}
+                                                className="btn btn-primary btn-block">Edit
                                         </button>
                                     </td>
                                 </tr>
