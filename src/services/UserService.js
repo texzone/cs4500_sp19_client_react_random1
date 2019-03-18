@@ -11,7 +11,7 @@ export default class UserService {
         fetch(MIDDLE_TIER_URL + '${userId}')
             .then(response => response.json())
     findAllUsers = () =>
-        fetch(USER_API_URL)
+        fetch(MIDDLE_TIER_URL)
             .then(response => response.json())
 
     createUser = (user) => {
