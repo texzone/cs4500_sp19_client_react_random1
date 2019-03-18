@@ -103,7 +103,7 @@ class UserDetails extends React.Component {
                         }
                     </select>
                     <label>Username</label><br/>
-                    <input onChange={{() => {}}
+                    <input onChange={() => {}}
                            className="form-control"
                            value={this.state.user.username}/>
                     <label>Password</label>
