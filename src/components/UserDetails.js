@@ -28,31 +28,17 @@ class UserDetails extends React.Component {
             )
     }
 
-    cancel = () =>
-        this.props.history.push("/admin/users");
-
-    selectUser = function (id) {
-        if (id > 0) {
-            return this.userService
+    selectUser = id =>
+            this.UserService
                 .findUserById(id)
                 .then(user => {
-                    this.props.history.push("/admin/users/" + id);
-                    this.setState({
-                        user: user
-                    })
-                });
-        } else {
-            this.props.history.push("/admin/users/new");
-            this.setState({
-                user: {
-                    username: 'Enter a Username Here',
-                    password: 'Enter a Password Here',
-                    firstName: 'Enter a First Name Here',
-                    lastName: 'Enter a Last Name Here'
-                }
-            });
-        }
-    };
+                        this.props.history.push("/admin/users/" + id)
+                        this.setState({
+                            user: user
+                        })
+                    }
+                )
+
 
     createUser = () =>
         this.userService
@@ -67,6 +53,33 @@ class UserDetails extends React.Component {
         this.userService
             .deleteUser(this.state.user)
             .then(this.props.history.push("/admin/users/"));
+
+    cancel = () =>
+            this.props.history.push("/admin/users");
+
+        selectUser = function (id) {
+            if (id > 0) {
+                return this.userService
+                    .findUserById(id)
+                    .then(user => {
+                        this.props.history.push("/admin/users/" + id);
+                        this.setState({
+                            user: user
+                        })
+                    });
+            } else {
+                this.props.history.push("/admin/users/new");
+                this.setState({
+                    user: {
+                        username: 'username',
+                        password: 'password',
+                        firstName: 'first name',
+                        lastName: 'last name'
+                    }
+                });
+            }
+        };
+
 
     render() {
         return (
@@ -90,65 +103,32 @@ class UserDetails extends React.Component {
                         }
                     </select>
                     <label>Username</label><br/>
-                    <input onChange={(e) =>
-                        this.setState({
-                            user: {
-                                id: this.state.user.id,
-                                username: e.target.value,
-                                password: this.state.user.password,
-                                firstName: this.state.user.firstName,
-                                lastName: this.state.user.lastName
-                            }
-                        })} className="form-control"
+                    <input onChange={() => {}}
+                           className="form-control"
                            value={this.state.user.username}/>
                     <label>Password</label>
-                    <input onChange={(e) =>
-                        this.setState(
-                            {
-                                user: {
-                                    id: this.state.user.id,
-                                    username: this.state.user.username,
-                                    password: e.target.value,
-                                    firstName: this.state.user.firstName,
-                                    lastName: this.state.user.lastName
-                                }
-                            })} className="form-control"
+                    <input onChange={() => {}}
+                           className="form-control"
                            value={this.state.user.password}/>
                     <label>First Name</label>
-                    <input onChange={(e) =>
-                        this.setState({
-                            user: {
-                                id: this.state.user.id,
-                                username: this.state.user.username,
-                                password: this.state.user.password,
-                                firstName: e.target.value,
-                                lastName: this.state.user.lastName
-                            }
-                        })} className="form-control"
+                    <input onChange={() => {}}
+                           className="form-control"
                            value={this.state.user.firstName}/>
                     <label>Last Name</label>
-                    <input onChange={(e) =>
-                        this.setState({
-                            user: {
-                                id: this.state.user.id,
-                                username: this.state.user.username,
-                                password: this.state.user.password,
-                                firstName: this.state.user.firstName,
-                                lastName: e.target.value
-                            }
-                        })} className="form-control"
+                    <input onChange={() => {}}
+                           className="form-control"
                            value={this.state.user.lastName}/>
                 </div>
                 <div>
-                    <button className="btn btn-danger" onClick={this.cancel}>Cancel</button>
-                    <button className="btn btn-danger" onClick={
+                    <button className="btn btn-primary" onClick={this.cancel}>Cancel</button>
+                    <button className="btn btn-primary" onClick={
                         () => {this.deleteUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))}
+                    }>Add User</button>
+                    <button className="btn btn-primary" onClick={
+                        () => {this.updateUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))}
                     }>Delete User</button>
                     <button className="btn btn-primary" onClick={
                         () => {this.createUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))}
-                    }>Add User</button>
-                    <button className="btn btn-success" onClick={
-                        () => {this.updateUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))}
                     }>Update User</button>
                 </div>
             </div>
