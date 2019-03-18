@@ -27,8 +27,6 @@ const Admin = () =>
                 <div className="col-3">
                     <Link to="/admin/users">Users</Link>
                     <br/>
-                    <Link to="/admin/users/1">User Details</Link>
-                    <br/>
                     <Link to="/admin/services">Services</Link>
                     <br/>
                     <Link to="/admin/faqs">FAQs</Link>
@@ -64,10 +62,6 @@ const Admin = () =>
                         path="/admin/users"
                         exact
                         component={Users}/>
-                    <Route
-                        path="/admin/users/:id"
-                        exact
-                        component={UserDetails}/>
                 </div>
             </div>
         </Router>
