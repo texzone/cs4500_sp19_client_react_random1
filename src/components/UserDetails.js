@@ -103,53 +103,20 @@ class UserDetails extends React.Component {
                         }
                     </select>
                     <label>Username</label><br/>
-                    <input onChange={(e) =>
-                        this.setState({
-                            user: {
-                                id: this.state.user.id,
-                                username: e.target.value,
-                                password: this.state.user.password,
-                                firstName: this.state.user.firstName,
-                                lastName: this.state.user.lastName
-                            }
-                        })} className="form-control"
+                    <input onChange={{() => {}}
+                           className="form-control"
                            value={this.state.user.username}/>
                     <label>Password</label>
-                    <input onChange={(e) =>
-                        this.setState(
-                            {
-                                user: {
-                                    id: this.state.user.id,
-                                    username: this.state.user.username,
-                                    password: e.target.value,
-                                    firstName: this.state.user.firstName,
-                                    lastName: this.state.user.lastName
-                                }
-                            })} className="form-control"
+                    <input onChange={() => {}}
+                           className="form-control"
                            value={this.state.user.password}/>
                     <label>First Name</label>
-                    <input onChange={(e) =>
-                        this.setState({
-                            user: {
-                                id: this.state.user.id,
-                                username: this.state.user.username,
-                                password: this.state.user.password,
-                                firstName: e.target.value,
-                                lastName: this.state.user.lastName
-                            }
-                        })} className="form-control"
+                    <input onChange={() => {}}
+                           className="form-control"
                            value={this.state.user.firstName}/>
                     <label>Last Name</label>
-                    <input onChange={(e) =>
-                        this.setState({
-                            user: {
-                                id: this.state.user.id,
-                                username: this.state.user.username,
-                                password: this.state.user.password,
-                                firstName: this.state.user.firstName,
-                                lastName: e.target.value
-                            }
-                        })} className="form-control"
+                    <input onChange={() => {}}
+                           className="form-control"
                            value={this.state.user.lastName}/>
                 </div>
                 <div>
