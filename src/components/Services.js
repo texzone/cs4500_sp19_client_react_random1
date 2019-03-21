@@ -75,7 +75,8 @@ class Services extends React.Component {
         }
     }
     render() {
-        return(
+        let div = 
+            (
                 <div>
                 <h3>Services</h3>
                 <table className="table">
@@ -112,7 +113,9 @@ class Services extends React.Component {
                 </tr>
             </table>
                 </div>
-              )
+            )
+            this.createPageButtons()
+            return div;
     }
 }
 
