@@ -28,7 +28,7 @@ const FAQTable = (props) => {
                 </input>
             </th>
             <th>
-                <button onClick={() => this.addFAQ()}>Add</button>
+                <button>Add</button>
                 <button>Save</button>
             </th>
         </tr>
