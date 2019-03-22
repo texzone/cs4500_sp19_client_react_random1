@@ -1,17 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
-/*import Users from './Users'
-import UserDetails from './UserDetails'
-*/
-import Services from './Services'
-/*
-import ServiceDetails from './ServiceDetails'
-import ServiceCategories from './ServiceCategories'
-import ServiceCategoryDetails from './ServiceCategoryDetails'
-import ServiceQuestions from './ServiceQuestions'
-import ServiceQuestionDetails from './ServiceQuestionDetails'
-import ServiceAnswers from './ServiceAnswers'
-import ServiceAnswerDetails from './ServiceAnswerDetails'*/
+import ServicesContainer from './containers/ServicesContainer'
 import FAQs from './FAQs'
 import FAQContainer from './containers/FAQContainer'
 import FAQDetails from './FAQDetails'
@@ -41,7 +30,7 @@ const Admin = () =>
                     <Route
                         path="/admin/services"
                         exact
-                        component={Services}/>
+                        component={ServicesContainer}/>
                     <Route
                         path="/admin/faqs"
                         exact

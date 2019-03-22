@@ -28,18 +28,20 @@ const FAQTable = (props) => {
                 </input>
             </th>
             <th>
-                <button>Add</button>
+                <button onClick={() => props.addFn()}>Add</button>
                 <button>Save</button>
             </th>
         </tr>
         <tbody>
           {
-           props.faqs.map(faq =>
+           props.faqs.slice( ((props.pageNumber * props.itemsPerPage) - props.itemsPerPage), ((props.pageNumber * props.itemsPerPage) - 1))
+               .map(faq =>
              <tr key={faq.id}>
                <td>{faq.title}</td>
                <td>{faq.question}</td>
                <td>
                     <button onClick={() => props.deleteFn(faq.id)}>Delete</button>
+                   <button onClick={() => props.updateFn(faq.id)}>Edit</button>
               </td>
             </tr>
           )
