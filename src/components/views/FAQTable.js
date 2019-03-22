@@ -28,7 +28,7 @@ const FAQTable = (props) => {
                 </input>
             </th>
             <th>
-                <button>Add</button>
+                <button onClick={() => props.addFn()}>Add</button>
                 <button>Save</button>
             </th>
         </tr>
@@ -40,6 +40,7 @@ const FAQTable = (props) => {
                <td>{faq.question}</td>
                <td>
                     <button onClick={() => props.deleteFn(faq.id)}>Delete</button>
+                   <button onClick={() => props.updateFn(faq.id)}>Edit</button>
               </td>
             </tr>
           )
