@@ -1,5 +1,5 @@
-import MIDDLE_TIER_URL from '../Env.js'
 export default class UserService {
+    static MIDDLE_TIER_URL = "https://cs4500-sp19-random1.herokuapp.com"
     static instance = null;
     static getInstance() {
         if(UserService.instance === null) {
@@ -8,7 +8,6 @@ export default class UserService {
         return this.instance
     }
 
-    console.log(MIDDLE_TIER_URL)
     findUserById = userId =>
         fetch(MIDDLE_TIER_URL + '/api/users/' + `${userId}`)
             .then(response => response.json())
