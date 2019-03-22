@@ -7,6 +7,8 @@ export default class UserService {
         }
         return this.instance
     }
+
+    console.log(MIDDLE_TIER_URL)
     findUserById = userId =>
         fetch(MIDDLE_TIER_URL + '/api/users/' + `${userId}`)
             .then(response => response.json())
