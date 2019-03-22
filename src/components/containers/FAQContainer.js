@@ -94,7 +94,6 @@ class FAQContainer extends React.Component {
     onChangeItemsPerPage() {
         var currButtons = document.getElementById("pageButtons").innerHTML = "";
         var eID = document.getElementById("selector");
-        debugger;
         var pageText = eID.options[eID.selectedIndex].text;
 
         if (pageText == "10") {
