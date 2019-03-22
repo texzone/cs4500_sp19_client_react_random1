@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="361cdf35-66ee-4448-ac1d-3ef496e203cd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/FAQAnswers.js" afterPath="$PROJECT_DIR$/src/components/FAQAnswers.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,37 +17,37 @@
       <file leaf-file-name="Users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="216">
+              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FAQs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/FAQs.js">
+      <file leaf-file-name="UserDetails.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/UserDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="324">
+              <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceCategoryDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ServiceCategoryDetails.js">
+      <file leaf-file-name="FAQAnswerDetails.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/FAQAnswerDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="810">
+              <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceCategories.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ServiceCategories.js">
+      <file leaf-file-name="FAQContainer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/containers/FAQContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-2541">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -63,21 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Env.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Env.js">
+      <file leaf-file-name="ServiceService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/ServiceService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="65" lean-forward="false" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FAQAnswerDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/FAQAnswerDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -86,18 +77,28 @@
       <file leaf-file-name="FAQAnswers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FAQAnswers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="540">
+              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/UserDetails.js">
+      <file leaf-file-name="FAQAnswerService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/FAQAnswerService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FAQs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/FAQs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,15 +112,15 @@
       <find>props.</find>
       <find>UsersList</find>
       <find>USER_API_URL</find>
-      <find>findAllUsers</find>
       <find>MIDDLE_TIER_URL</find>
+      <find>findAllUsers</find>
     </findStrings>
     <replaceStrings>
       <replace>cs4500-sp19-random1</replace>
       <replace>UserDetails</replace>
       <replace>MIDDLE_TIER_URL + &quot;/api/users/&quot;</replace>
-      <replace>findAllUser</replace>
       <replace>HOST_URL</replace>
+      <replace>findAllUser</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -139,6 +140,7 @@
         <option value="$PROJECT_DIR$/src/components/Users.js" />
         <option value="$PROJECT_DIR$/src/services/UserService.js" />
         <option value="$PROJECT_DIR$/src/Env.js" />
+        <option value="$PROJECT_DIR$/src/components/FAQAnswersRender.js" />
         <option value="$PROJECT_DIR$/src/components/FAQAnswers.js" />
       </list>
     </option>
@@ -182,6 +184,13 @@
               <item name="cs4500_sp19_client_react_random1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cs4500_sp19_client_react_random1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cs4500_sp19_client_react_random1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cs4500_sp19_client_react_random1" type="b2602c69:ProjectViewProjectNode" />
@@ -594,14 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/ServiceService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -614,14 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FAQDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -650,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FAQs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ServiceCategoryDetails.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -674,14 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FAQAnswerDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Services.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -690,26 +667,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Users.js">
+    <entry file="file://$PROJECT_DIR$/src/components/FAQs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UserDetails.js">
+    <entry file="file://$PROJECT_DIR$/src/components/FAQDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/UserService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -722,10 +691,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/containers/FAQContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2541">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FAQAnswersRender.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FAQAnswerDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UserDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/UserService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/ServiceService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/FAQAnswerService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FAQAnswers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        <state relative-caret-position="540">
+          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding />
         </state>
       </provider>
