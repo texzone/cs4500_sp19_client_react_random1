@@ -18,7 +18,6 @@ import FAQDetails from './FAQDetails'
 import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
-import UserDetails from './UserDetails'
 
 const Admin = () =>
     <div>
@@ -27,8 +26,6 @@ const Admin = () =>
             <div className="row">
                 <div className="col-3">
                     <Link to="/admin/users">Users</Link>
-                    <br/>
-                    <Link to="/admin/users/1">User Details</Link>
                     <br/>
                     <Link to="/admin/services">Services</Link>
                     <br/>
@@ -65,10 +62,6 @@ const Admin = () =>
                         path="/admin/users"
                         exact
                         component={Users}/>
-                    <Route
-                        path="/admin/users/:id"
-                        exact
-                        component={UserDetails}/>
                 </div>
             </div>
         </Router>
