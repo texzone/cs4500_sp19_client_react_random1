@@ -24,6 +24,8 @@ class FAQContainer extends React.Component {
         this.previousPage = this.previousPage.bind(this)
         this.onChangeItemsPerPage = this.onChangeItemsPerPage.bind(this)
         this.createPageButtons = this.createPageButtons.bind(this)
+        this.addFAQ = this.addFAQ.bind(this)
+        this.updateFAQ = this.updateFAQ.bind(this)
     }
 
 
@@ -50,7 +52,7 @@ class FAQContainer extends React.Component {
         this.faqService.deleteFAQ(id)
             .then(() => this.refreshFAQs());
     }
-  
+
   addFAQ() {
         console.log('Add FAQ Click happened');
         const titleInput = document.getElementById('titleInput');
@@ -81,7 +83,7 @@ class FAQContainer extends React.Component {
         titleInput.value = "";
         questionInput.value = "";
     }
-  
+
     searchFAQs() {
         const titleInput = document.getElementById('titleInput');
         const questionInput = document.getElementById('questionInput');
@@ -182,6 +184,8 @@ class FAQContainer extends React.Component {
             <div>
                 <FAQTable
                     faqs={this.state.faqs}
+                    addFn={this.addFAQ}
+                    updateFn={this.updateFAQ}
                     deleteFn={this.deleteFAQ}
                     pageNumber={this.state.pageNumber}
                     itemsPerPage={this.state.itemsPerPage}/>
