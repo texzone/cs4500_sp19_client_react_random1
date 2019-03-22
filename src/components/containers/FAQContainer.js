@@ -18,6 +18,8 @@ class FAQContainer extends React.Component {
       this.searchFAQs = this.searchFAQs.bind(this)
       this.clearSearch = this.clearSearch.bind(this)
       this.deleteFAQ = this.deleteFAQ.bind(this)
+      this.addFAQ = this.addFAQ.bind(this)
+      this.updateFAQ = this.updateFAQ.bind(this)
 
   }
 
@@ -45,6 +47,37 @@ class FAQContainer extends React.Component {
            .then(() => this.refreshFAQs());
   }
 
+
+    addFAQ() {
+        console.log('Add FAQ Click happened');
+        const titleInput = document.getElementById('titleInput');
+        const questionInput = document.getElementById('questionInput');
+        var title = titleInput.value;
+        var question = questionInput.value;
+        if (title == "" || question == "") {
+            alert("Please add a question")
+        }
+        this.faqService
+            .addFAQ({title: title, question: question})
+            .then(() => this.refreshFAQs());
+        titleInput.value = ""
+        questionInput.value = ""
+    }
+
+    updateFAQ(id) {
+        const titleInput = document.getElementById('titleInput');
+        const questionInput = document.getElementById('questionInput');
+        var title = titleInput.value;
+        var question = questionInput.value;
+        if (title == "" & question == "") {
+
+        }
+        this.faqService
+            .updateFAQ({title: title, question: question}, id)
+            .then(() => this.refreshFAQs());
+        titleInput.value = "";
+        questionInput.value = "";
+    }
 
   searchFAQs() {
    const titleInput = document.getElementById('titleInput');
@@ -90,7 +123,8 @@ class FAQContainer extends React.Component {
   render() {
     let result = (
       <div>
-        <FAQTable faqs={this.state.faqs} deleteFn={this.deleteFAQ}/>
+        <FAQTable faqs={this.state.faqs} deleteFn={this.deleteFAQ} addFn={this.addFAQ}
+                  updateFn={this.updateFAQ}/>
         <FAQSearch
             disabled={this.state.searchButtonDisabled}
             searchFn={this.searchFAQs}
