@@ -5,6 +5,7 @@ import FAQTable from '../views/FAQTable'
 import FAQPagination from '../views/FAQPagination'
 
 class FAQContainer extends React.Component {
+
     constructor(props) {
         super(props)
         this.faqService = FAQService.getInstance()
@@ -24,6 +25,7 @@ class FAQContainer extends React.Component {
         this.onChangeItemsPerPage = this.onChangeItemsPerPage.bind(this)
         this.createPageButtons = this.createPageButtons.bind(this)
     }
+
 
     componentDidMount() {
         this.faqService
@@ -48,8 +50,38 @@ class FAQContainer extends React.Component {
         this.faqService.deleteFAQ(id)
             .then(() => this.refreshFAQs());
     }
+  
+  addFAQ() {
+        console.log('Add FAQ Click happened');
+        const titleInput = document.getElementById('titleInput');
+        const questionInput = document.getElementById('questionInput');
+        var title = titleInput.value;
+        var question = questionInput.value;
+        if (title == "" || question == "") {
+            alert("Please add a question")
+        }
+        this.faqService
+            .addFAQ({title: title, question: question})
+            .then(() => this.refreshFAQs());
+        titleInput.value = ""
+        questionInput.value = ""
+    }
 
+    updateFAQ(id) {
+        const titleInput = document.getElementById('titleInput');
+        const questionInput = document.getElementById('questionInput');
+        var title = titleInput.value;
+        var question = questionInput.value;
+        if (title == "" & question == "") {
 
+        }
+        this.faqService
+            .updateFAQ({title: title, question: question}, id)
+            .then(() => this.refreshFAQs());
+        titleInput.value = "";
+        questionInput.value = "";
+    }
+  
     searchFAQs() {
         const titleInput = document.getElementById('titleInput');
         const questionInput = document.getElementById('questionInput');
@@ -122,6 +154,7 @@ class FAQContainer extends React.Component {
             this.setState({pageNumber: temp })
         }
     }
+
 
     createPageButtons() {
         var totalPages = Math.ceil(this.state.faqs.length / this.state.itemsPerPage);
