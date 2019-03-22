@@ -31,7 +31,7 @@ class FAQAnswers extends React.Component {
                     </tr>
                     <tbody>
                     {
-                        this.state.faqAnswers
+                        this.faqAnswers
                             .map(faqAnswer =>
                                      <tr key={faqAnswer.id}>
                                          <td>{faqAnswer.question}</td>

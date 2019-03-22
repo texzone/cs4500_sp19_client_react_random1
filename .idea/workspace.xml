@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="361cdf35-66ee-4448-ac1d-3ef496e203cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Env.js" afterPath="$PROJECT_DIR$/src/Env.js" />
-      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" afterPath="$PROJECT_DIR$/src/services/UserService.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/FAQAnswers.js" afterPath="$PROJECT_DIR$/src/components/FAQAnswers.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Env.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Env.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Env.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -84,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FAQAnswers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FAQAnswers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FAQAnswers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="594">
+              <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -140,6 +139,7 @@
         <option value="$PROJECT_DIR$/src/components/Users.js" />
         <option value="$PROJECT_DIR$/src/services/UserService.js" />
         <option value="$PROJECT_DIR$/src/Env.js" />
+        <option value="$PROJECT_DIR$/src/components/FAQAnswers.js" />
       </list>
     </option>
   </component>
@@ -682,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FAQAnswers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Services.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -726,6 +718,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="65" lean-forward="false" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FAQAnswers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
           <folding />
         </state>
       </provider>
