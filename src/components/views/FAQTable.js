@@ -34,7 +34,8 @@ const FAQTable = (props) => {
         </tr>
         <tbody>
           {
-           props.faqs.map(faq =>
+           props.faqs.slice( ((props.pageNumber * props.itemsPerPage) - props.itemsPerPage), ((props.pageNumber * props.itemsPerPage) - 1))
+               .map(faq =>
              <tr key={faq.id}>
                <td>{faq.title}</td>
                <td>{faq.question}</td>
