@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render FAQSearch buttons with Search disabled 1`] = `
+<tr>
+  <th>
+    <div
+      id="searchButtons"
+    >
+      <button
+        disabled={false}
+        id="search"
+        onClick={[Function]}
+      >
+        Search
+      </button>
+      <button
+        disabled={true}
+        id="clearSearch"
+        onClick={[Function]}
+      >
+        Clear Search
+      </button>
+    </div>
+  </th>
+</tr>
+`;
+
+exports[`Render FAQSearch buttons without Search disabled 1`] = `
+<tr>
+  <th>
+    <div
+      id="searchButtons"
+    >
+      <button
+        disabled={false}
+        id="search"
+        onClick={[Function]}
+      >
+        Search
+      </button>
+      <button
+        disabled={true}
+        id="clearSearch"
+        onClick={[Function]}
+      >
+        Clear Search
+      </button>
+    </div>
+  </th>
+</tr>
+`;
