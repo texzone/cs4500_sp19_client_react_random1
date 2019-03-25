@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has two seperate buttons 1`] = `
+<tr>
+  <th>
+    <div
+      id="searchButtons"
+    >
+      <button
+        disabled={false}
+        id="search"
+        onClick={[Function]}
+      >
+        Search
+      </button>
+      <button
+        disabled={true}
+        id="clearSearch"
+        onClick={[Function]}
+      >
+        Clear Search
+      </button>
+    </div>
+  </th>
+</tr>
+`;
