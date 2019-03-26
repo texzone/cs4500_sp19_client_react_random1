@@ -17,7 +17,7 @@ it('Render FAQSearch buttons without Search disabled', () => {
 it('Render FAQSearch buttons with Search disabled', () => {
   const tree = renderer.create(
     <FAQSearch
-    disabled={false}
+    disabled={true}
     searchFn={FAQContainer.searchFAQs}
     clearFn={FAQContainer.clearSearch}
     />
