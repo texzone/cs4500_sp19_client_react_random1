@@ -4,7 +4,7 @@ import Services from '../views/Services'
 class ServicesContainer extends React.Component {
     constructor(props) {
         super(props)
-        this.serviceService = ServiceService.getInstance()
+        this.serviceService = this.props.service
         this.state = 
         { 
             services: [],
