@@ -7,14 +7,16 @@ exports[`Render FAQSearch buttons with Search disabled 1`] = `
       id="searchButtons"
     >
       <button
-        disabled={false}
+        className="searchButton"
+        disabled={true}
         id="search"
         onClick={[Function]}
       >
         Search
       </button>
       <button
-        disabled={true}
+        className="clearSearchButton"
+        disabled={false}
         id="clearSearch"
         onClick={[Function]}
       >
@@ -32,6 +34,7 @@ exports[`Render FAQSearch buttons without Search disabled 1`] = `
       id="searchButtons"
     >
       <button
+        className="searchButton"
         disabled={false}
         id="search"
         onClick={[Function]}
@@ -39,6 +42,7 @@ exports[`Render FAQSearch buttons without Search disabled 1`] = `
         Search
       </button>
       <button
+        className="clearSearchButton"
         disabled={true}
         id="clearSearch"
         onClick={[Function]}
