@@ -3,25 +3,20 @@ import Services from '../components/views/Services';
 import ServicesContainer from '../components/containers/ServicesContainer';
 import renderer from 'react-test-renderer';
 import ServiceService from '../services/ServiceService'
-const servicesService = ServiceService.getInstance()
+const serviceService = ServiceService.getInstance()
 import '../mock/services/mockServicesService'
 
 test('service list renders correctly', () => {
-    const testRenderer = TestRenderer.create(
+    const testRenderer = renderer.create(
             <ServicesContainer
-                service=servicesService/>)
+                service={serviceService}/>)
 
         let tree = testRenderer.toJSON()
         expect(tree).toMatchSnapshot()
-
-        const testInstance = testRenderer.root
-        const serviceTitles = testInstance.findAllByProps({className: 'serviceName'})
-
-        expect(serviceTitles.length).toBe(4)
-}
+})
 
 test('find all services', () => {
-    return serviceService.findAllUsers()
+    return serviceService.findAllServices()
         .then(services => {
             expect(services).toBeDefined()
             expect(services).toHaveLength(4)
