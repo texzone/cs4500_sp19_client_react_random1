@@ -8,6 +8,8 @@ import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
 import UserDetails from './UserDetails'
+import ServiceAnswerDetails from "./ServiceAnswerDetails";
+import ServiceAnswer from "./ServiceAnswer";
 
 const Admin = () =>
     <div>
@@ -28,6 +30,10 @@ const Admin = () =>
                     <Link to="/admin/faq-answers/">FAQ Answers</Link>
                     <br/>
                     <Link to="/admin/faq-answers/1">FAQ Answers Details</Link>
+                    <br/>
+                    <Link to="/admin/service-answers/">Service Answers</Link>
+                    <br/>
+                    <Link to="/admin/service-answers/1">Service Answers Details</Link>
                 </div>
                 <div className="col-9">
                     <Route
@@ -50,6 +56,14 @@ const Admin = () =>
                         path="/admin/faq-answers/:id"
                         exact
                         component={FAQAnswerDetails}/>
+                    <Route
+                        path="/admin/service-answers/"
+                        exact
+                        component={ServiceAnswer}/>
+                    <Route
+                        path="/admin/service-answers/:ids"
+                        exact
+                        component={ServiceAnswerDetails}/>
                     <Route
                         path="/admin/users"
                         exact
