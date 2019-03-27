@@ -1,9 +1,9 @@
 import MIDDLE_TIER_URL from '../Env.js'
-export default class ServiceAnswer {
+export default class ServiceAnswerService {
     static instance = null;
     static getInstance() {
-        if(ServiceAnswer.instance === null) {
-            ServiceAnswer.instance = new ServiceAnswer()
+        if(ServiceAnswerService.instance === null) {
+            ServiceAnswerService.instance = new ServiceAnswerService()
         }
         return this.instance
     }
