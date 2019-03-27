@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "username": "JamesWutang",
+    "password": "legend456#",
+    "firstName": "James",
+    "lastName": "Wu",
+    "role": "User",
+    "frequentlyAskedAnswers": []
+  },
+  {
+    "id": 10,
+    "username": "acepetdetective",
+    "password": "animalluvr123",
+    "firstName": "Ace",
+    "lastName": "Ventura",
+    "role": "Provider",
+    "frequentlyAskedAnswers": []
+  },
+  {
+    "id": 11,
+    "username": "mister_freeman",
+    "password": "godsdontneedpasswords",
+    "firstName": "Morgan",
+    "lastName": "Freeman",
+    "role": "Provider",
+    "frequentlyAskedAnswers": []
+  },
+  {
+    "id": 12,
+    "username": "JamesWutang",
+    "password": null,
+    "firstName": "James",
+    "lastName": "Wu",
+    "role": null,
+    "frequentlyAskedAnswers": []
+  }
+]
