@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render FAQPagination buttons 1`] = `
+<div>
+  <tr>
+    <th>
+      <div
+        id="dropdown"
+      >
+        <select
+          id="selector"
+          onChange={[Function]}
+        >
+          <option
+            selected="selected"
+            value="1"
+          >
+            10
+          </option>
+          <option
+            value="2"
+          >
+            25
+          </option>
+          <option
+            value="3"
+          >
+            50
+          </option>
+          <option
+            value="4"
+          >
+            100
+          </option>
+          <option
+            value="5"
+          >
+            All
+          </option>
+        </select>
+      </div>
+    </th>
+    <th>
+      <button
+        id="previous"
+        onClick={[Function]}
+      >
+        Previous
+      </button>
+    </th>
+    <th>
+      <div
+        id="pageButtons"
+      >
+         
+      </div>
+    </th>
+    <th>
+      <button
+        id="next"
+        onClick={[Function]}
+      >
+        Next
+      </button>
+    </th>
+  </tr>
+</div>
+`;
