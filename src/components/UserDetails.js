@@ -12,20 +12,20 @@ const UserDetails = props =>
                 <th>&nbsp;</th>
             </tr>
             <tr>
-                <th><input type="text" onChange={props.renderUsername} value={props.username}
+                <th><input className= "form-control username-edit" type="text" onChange={props.renderUsername} value={props.username}
                            placeholder="username"/></th>
-                <th><input type="text" onChange={props.renderFirstName} value={props.firstName}
+                <th><input className= "form-control firstname-edit" type="text" onChange={props.renderFirstName} value={props.firstName}
                            placeholder="firstName"/></th>
-                <th><input type="text" onChange={props.renderLastName} value={props.lastName}
+                <th><input className= "form-control lastname-edit" type="text" onChange={props.renderLastName} value={props.lastName}
                            placeholder="lastName"/></th>
                 <th>
                     <button type="button" onClick={props.createUser}
-                            className="btn btn-primary btn-block">Create
+                            className="btn btn-primary btn-block create-btn-user">Create
                     </button>
                 </th>
                 <th>
                     <button type="button" onClick={props.updateUser}
-                            className="btn btn-primary btn-block">Save
+                            className="btn btn-primary btn-block save-user-btn">Save
                     </button>
                 </th>
             </tr>
@@ -40,10 +40,10 @@ const UserDetails = props =>
                             <td>{user.lastName}</td>
                             <td>
                                 <button type="button" onClick={() => props.deleteUser(user)}
-                                        className="btn btn-primary btn-block">Delete
+                                        className="btn btn-primary btn-block delete-user-btn">Delete
                                 </button>
                                 <button type="button" onClick={() => props.renderUser(user)}
-                                        className="btn btn-primary btn-block">Edit
+                                        className="btn btn-primary btn-block edit-user-btn">Edit
                                 </button>
                             </td>
                         </tr>
