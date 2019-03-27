@@ -162,14 +162,14 @@ class FAQContainer extends React.Component {
         var totalPages = Math.ceil(this.state.faqs.length / this.state.itemsPerPage);
         var i;
         for (i = 1; i < totalPages + 1; i++) {
-            if ((document.getElementById("Button " + i)) == null)
+            if ((document.getElementById("Button" + i)) == null)
             {
                 console.log(i);
                 var button = document.createElement("BUTTON");
                 var buttonText = document.createTextNode("" + i);
                 button.appendChild(buttonText);
                 button.type = "button";
-                button.id = "Button " + i;
+                button.id = "Button" + i;
                 button.value = i;
                 button.onclick = function(e) {
                     this.setState({pageNumber: e.target.value})

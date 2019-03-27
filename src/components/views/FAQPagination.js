@@ -5,8 +5,12 @@ const FAQPagination = (props) => {
         <div>
             <tr>
                 <th>
-                    <div id = "dropdown" >
-                        <select id="selector" onChange={() => props.changeItemsPerPageFn()}>
+                    <div
+                        id = "dropdown" >
+                        <select
+                            className="dropdownSelector"
+                            id="selector"
+                            onChange={() => props.changeItemsPerPageFn()}>
                             <option value="1" selected="selected">10</option>
                             <option value="2">25</option>
                             <option value="3">50</option>
@@ -14,9 +18,15 @@ const FAQPagination = (props) => {
                             <option value="5">All</option></select>
                     </div>
                 </th>
-                <th><button id="previous" onClick={() => props.previousFn()}>Previous</button></th>
+                <th><button className="previousButton"
+                            id="previous"
+                            onClick={() => props.previousFn()}>
+                    Previous</button></th>
                 <th><div id="pageButtons"> </div></th>
-                <th><button id="next" onClick={() => props.nextFn()}>Next</button></th>
+                <th><button className="nextButton"
+                            id="next"
+                            onClick={() => props.nextFn()}>
+                    Next</button></th>
             </tr>
         </div>
     )
