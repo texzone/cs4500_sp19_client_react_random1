@@ -6,11 +6,13 @@ const FAQSearch = (props) => {
       <th>
         <div id="searchButtons">
             <button
+              className = "searchButton"
               id="search"
               disabled={props.disabled}
               onClick={() => props.searchFn()}>
               Search</button>
             <button
+              className = "clearSearchButton"
               id="clearSearch"
               disabled={!props.disabled}
               onClick={() => props.clearFn()}>
