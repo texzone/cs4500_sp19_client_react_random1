@@ -9,6 +9,7 @@ import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
 import ServiceQuestions from "./ServiceQuestions";
+import ServiceQuestionDetails from "./ServiceQuestionDetails";
 const servicesService = ServiceService.getInstance()
 
 const Admin = () =>
@@ -30,6 +31,8 @@ const Admin = () =>
                     <Link to="/admin/faq-answers/1">FAQ Answers Details</Link>
                     <br/>
                     <Link to="/admin/service-questions">Service Questions</Link>
+                    <br/>
+                    <Link to="/admin/service-questions/1">Service Questions Details</Link>
 
                 </div>
                 <div className="col-9">
@@ -61,6 +64,10 @@ const Admin = () =>
                         path="/admin/service-questions"
                         exact
                         component={ServiceQuestions}/>
+                    <Route
+                        path="/admin/service-questions/:id"
+                        exact
+                        component={ServiceQuestionDetails}/>
                 </div>
             </div>
         </Router>

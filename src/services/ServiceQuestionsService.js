@@ -37,19 +37,18 @@ export default class ServiceQuestionsService {
     deleteServiceQuestion = (id) =>
         fetch(MIDDLE_TIER_URL + "/api/service-questions/" + id, {method: 'delete'})
 
-    updateServiceQuestion = (updatedFAQ, id) =>
-        fetch(MIDDLE_TIER_URL + "/api/service-questions" + id, {
+    updateServiceQuestion = (id, updatedServiceQuestion) =>
+        fetch(MIDDLE_TIER_URL + "/api/service-questions/" + id, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                title: updatedFAQ.title,
-                question: updatedFAQ.question,
+                title: updatedServiceQuestion.title,
+                question: updatedServiceQuestion.question,
             })
         })
             .then(response => response.json());
 
 }
-
