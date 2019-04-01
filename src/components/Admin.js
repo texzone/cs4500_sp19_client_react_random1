@@ -1,13 +1,15 @@
 import React from 'react'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import ServicesContainer from './containers/ServicesContainer'
+import ServiceService from '../services/ServiceService'
 import FAQs from './FAQs'
 import FAQContainer from './containers/FAQContainer'
 import FAQDetails from './FAQDetails'
 import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
-import UserDetails from './UserDetails'
+import ServiceQuestions from "./ServiceQuestions";
+const servicesService = ServiceService.getInstance()
 
 const Admin = () =>
     <div>
@@ -16,8 +18,6 @@ const Admin = () =>
             <div className="row">
                 <div className="col-3">
                     <Link to="/admin/users">Users</Link>
-                    <br/>
-                    <Link to="/admin/users/1">User Details</Link>
                     <br/>
                     <Link to="/admin/services">Services</Link>
                     <br/>
@@ -28,12 +28,15 @@ const Admin = () =>
                     <Link to="/admin/faq-answers/">FAQ Answers</Link>
                     <br/>
                     <Link to="/admin/faq-answers/1">FAQ Answers Details</Link>
+                    <br/>
+                    <Link to="/admin/service-questions">Service Questions</Link>
+
                 </div>
                 <div className="col-9">
                     <Route
                         path="/admin/services"
                         exact
-                        component={ServicesContainer}/>
+                        render={() => <ServicesContainer service={servicesService}/>}/>
                     <Route
                         path="/admin/faqs"
                         exact
@@ -55,9 +58,9 @@ const Admin = () =>
                         exact
                         component={Users}/>
                     <Route
-                        path="/admin/users/:id"
+                        path="/admin/service-questions"
                         exact
-                        component={UserDetails}/>
+                        component={ServiceQuestions}/>
                 </div>
             </div>
         </Router>
