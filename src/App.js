@@ -14,6 +14,7 @@ class App extends Component {
           <Router>
             <div>
               <Link to="/home">Home</Link> |
+              <Link to="/services">Services</Link> |
               <Link to="/admin">Admin</Link>
               <br/>
               <br/>
