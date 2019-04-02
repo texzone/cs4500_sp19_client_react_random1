@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render all from service category service 1`] = `
+<ul
+  className="list-group"
+>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3003"
+    >
+      House Cleaning
+    </a>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3013"
+    >
+      Pet Services
+    </a>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3023"
+    >
+      Tutoring & Training
+    </a>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3033"
+    >
+      Misc.
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`service category list renders correctly 1`] = `
+<ul
+  className="list-group"
+>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3003"
+    >
+      House Cleaning
+    </a>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3013"
+    >
+      Pet Services
+    </a>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3023"
+    >
+      Tutoring & Training
+    </a>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <a
+      href="#3033"
+    >
+      Misc.
+    </a>
+  </li>
+</ul>
+`;
