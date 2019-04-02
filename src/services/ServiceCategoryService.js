@@ -12,6 +12,6 @@ export default class ServiceCategoryService {
         fetch(MIDDLE_TIER_URL + "/api/service-categories/" + categoryId)
             .then(response => response.json())
     findAllServiceCategories = () =>
-        fetch(MIDDLE_TIER_URL + "/api/service-categories")
+        fetch(MIDDLE_TIER_URL + "/api/categories")
             .then(response => response.json())
 }
