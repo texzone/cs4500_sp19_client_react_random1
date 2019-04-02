@@ -3,6 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import Admin from './components/Admin'
 import HomeContainer from './components/containers/HomeContainer'
+import ServiceNavigator from './components/serviceNavigator/ServiceNavigator'
 import ServiceProviderNavigator from './components/ServiceProviderNavigator'
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
           <Router>
             <div>
               <Link to="/home">Home</Link> |
+              <Link to="/services">Services</Link> |
               <Link to="/admin">Admin</Link>
               <br/>
               <br/>
@@ -21,6 +23,10 @@ class App extends Component {
                   path="/home"
                   exact
                   component={HomeContainer}/>
+              <Route
+                  path="/services"
+                  exact
+                  component={ServiceNavigator}/>
               <Route
                   path="/admin"
                   exact
