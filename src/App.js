@@ -8,6 +8,7 @@ import ServiceNavigator from './components/serviceNavigator/ServiceNavigator'
 import ServiceProviderNavigator from './components/ServiceProviderNavigator'
 import BusinessDetails from './components/BusinessDetails'
 import Login from './components/login/login'
+import ServiceProviderSearch from "./components/serviceProviderSearch/ServiceProviderSearch"
 
 class App extends Component {
   render() {
@@ -52,6 +53,10 @@ class App extends Component {
                   path="/businessDetails/:id"
                   exact
                   component={BusinessDetails}/>
+              <Route
+                  path="/services/:id"
+                  exact
+                  component={ServiceProviderSearch}/>
             </div>
           </Router>
         </div>
