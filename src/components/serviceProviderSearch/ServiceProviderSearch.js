@@ -23,13 +23,7 @@ export default class ServicesProviderSearch extends React.Component {
                     });
                     console.log(this.state.serviceCategory)
                 }
-            ).catch(err => {
-                //We'll use mock data
-                this.setState({
-                    serviceCategory: mockCategory[0]
-                });
-                console.log("Using Mocks!");
-            })
+            )
     }
 
     generateFilters() {

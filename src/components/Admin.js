@@ -54,6 +54,10 @@ const Admin = () =>
                         path="/admin/users"
                         exact
                         component={Users}/>
+                    <Route
+                        path="/admin/services/:serviceName"
+                        exact
+                        component={ServicesProviderSearch}/>
                 </div>
             </div>
         </Router>
