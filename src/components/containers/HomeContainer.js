@@ -1,5 +1,6 @@
 import React from 'react'
 import HomeSearchBar from '../views/HomeSearchBar'
+import ServiceCategoryPills from '../views/ServiceCategoryPills'
 import ServiceProviderService from '../../services/ServiceProviderService'
 import { Redirect } from 'react-router-dom';
 //import ServiceTabNavigator from './ServiceTabNavigator/ServiceTabNavigator'
@@ -57,6 +58,7 @@ class HomeContainer extends React.Component {
           </div>
 
           <br/>
+            <ServiceCategoryPills/>
           <br/>
           <br/>
           <br/>
