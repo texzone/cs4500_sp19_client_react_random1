@@ -1,6 +1,7 @@
 [
   {
-    "id": "123", "title": "Home Improvements",
+    "id": "123",
+    "title": "Home Improvements",
     "services": [
       {"id": "1", "title": "Appliance Installation"},
       {"id": "2", "title": "Cabinetry"},
@@ -97,7 +98,10 @@
           {"id": "5", "title": "5 bedroom"},
           {"id": "6", "title": "6 bedroom"}
         ]},
-      {"id": "2", "question": "Number of bathrooms", "questionType": "MULTIPLE-CHOICE",
+      {
+        "id": "2",
+        "question": "Number of bathrooms",
+        "questionType": "MULTIPLE-CHOICE",
         "choices": [
           {"id": "1", "title": "1 bathroom"},
           {"id": "2", "title": "2 bathroom"},

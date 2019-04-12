@@ -8,6 +8,7 @@ import FAQDetails from './FAQDetails'
 import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
+import ServicesProviderSearch from "./serviceProviderSearch/ServiceProviderSearch";
 const servicesService = ServiceService.getInstance()
 
 
