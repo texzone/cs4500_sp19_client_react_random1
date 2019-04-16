@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`service category section renders correctly many services 1`] = `
+<div>
+  <a
+    id={3013}
+  />
+  <h2>
+    Pet Services
+  </h2>
+  <div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="#"
+        >
+          Pet Service 1
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="#"
+        >
+          Pet Sitters
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="#"
+        >
+          Dog Trainers
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="#"
+        >
+          Cat Tamers
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`service category section renders correctly one service 1`] = `
+<div>
+  <a
+    id={3003}
+  />
+  <h2>
+    House Cleaning
+  </h2>
+  <div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="#"
+        >
+          Handymen
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

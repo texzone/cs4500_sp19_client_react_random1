@@ -1,15 +1,16 @@
 import React from 'react'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import ServicesContainer from './containers/ServicesContainer'
+import ServiceService from '../services/ServiceService'
 import FAQs from './FAQs'
 import FAQContainer from './containers/FAQContainer'
 import FAQDetails from './FAQDetails'
 import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
-import UserDetails from './UserDetails'
 import ServiceAnswerDetails from "./ServiceAnswerDetails";
 import ServiceAnswer from "./ServiceAnswer";
+const servicesService = ServiceService.getInstance()
 
 const Admin = () =>
     <div>
@@ -18,8 +19,6 @@ const Admin = () =>
             <div className="row">
                 <div className="col-3">
                     <Link to="/admin/users">Users</Link>
-                    <br/>
-                    <Link to="/admin/users/1">User Details</Link>
                     <br/>
                     <Link to="/admin/services">Services</Link>
                     <br/>
@@ -39,7 +38,7 @@ const Admin = () =>
                     <Route
                         path="/admin/services"
                         exact
-                        component={ServicesContainer}/>
+                        render={() => <ServicesContainer service={servicesService}/>}/>
                     <Route
                         path="/admin/faqs"
                         exact
@@ -68,10 +67,6 @@ const Admin = () =>
                         path="/admin/users"
                         exact
                         component={Users}/>
-                    <Route
-                        path="/admin/users/:id"
-                        exact
-                        component={UserDetails}/>
                 </div>
             </div>
         </Router>

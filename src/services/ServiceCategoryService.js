@@ -9,9 +9,9 @@ export default class ServiceCategoryService {
         return this.instance
     }
     findServiceCategoryById = categoryId =>
-        fetch(MIDDLE_TIER_URL + "/api/service-categories/" + categoryId)
+        fetch(MIDDLE_TIER_URL + "/api/categories/" + categoryId)
             .then(response => response.json())
     findAllServiceCategories = () =>
-        fetch(MIDDLE_TIER_URL + "/api/service-categories")
+        fetch(MIDDLE_TIER_URL + "/api/categories")
             .then(response => response.json())
 }

@@ -7,15 +7,16 @@ export default class UserService {
         }
         return this.instance
     }
+
     findUserById = userId =>
-        fetch(MIDDLE_TIER_URL + '${userId}')
+        fetch(MIDDLE_TIER_URL + '/api/users/' + `${userId}`)
             .then(response => response.json())
-    findAllUsers = () =>
-        fetch(MIDDLE_TIER_URL)
+    findAllUser = () =>
+        fetch(MIDDLE_TIER_URL + '/api/users/')
             .then(response => response.json())
 
     createUser = (user) => {
-        return fetch(MIDDLE_TIER_URL, {
+        return fetch(MIDDLE_TIER_URL + '/api/users/', {
             body: JSON.stringify(user),
             headers: {
                 'Content-Type' : 'application/json'
@@ -27,7 +28,7 @@ export default class UserService {
     }
 
     updateUser = (user) => {
-        return fetch(MIDDLE_TIER_URL + user.id, {
+        return fetch(MIDDLE_TIER_URL + '/api/users/' + user.id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +41,7 @@ export default class UserService {
     }
 
     deleteUser = (userId) => {
-        return fetch(MIDDLE_TIER_URL + "${userId}", {
+        return fetch(MIDDLE_TIER_URL + '/api/users/' + `${userId}`, {
             method: 'DELETE'
             }
         );

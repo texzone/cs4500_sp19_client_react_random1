@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`service category section list renders correctly 1`] = `
+<ul
+  className="list-group no-border"
+>
+  <li
+    className="list-group-item no-border"
+  >
+    <div>
+      <a
+        id={3003}
+      />
+      <h2>
+        House Cleaning
+      </h2>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Handymen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <div>
+      <a
+        id={3013}
+      />
+      <h2>
+        Pet Services
+      </h2>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Pet Service 1
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Pet Sitters
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Dog Trainers
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Cat Tamers
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <div>
+      <a
+        id={3023}
+      />
+      <h2>
+        Tutoring & Training
+      </h2>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Brain Trainers
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Math Tutors
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Fitness Trainers
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Baseball Coashing
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    className="list-group-item no-border"
+  >
+    <div>
+      <a
+        id={3033}
+      />
+      <h2>
+        Misc.
+      </h2>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Hypnosis
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Elemental Training
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Piano Lessons
+            </a>
+          </div>
+          <div
+            className="col-6 list-group-item no-border"
+          >
+            <a
+              href="#"
+            >
+              Misc4
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+`;

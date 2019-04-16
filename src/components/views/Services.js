@@ -14,7 +14,6 @@ const Services = ({services, onChangeItemsPerPage, nextPage, previousPage, creat
                     services.map(service =>
                             <tr key={service.id}>
                                 <td>{service.serviceName}</td>
-                                <td>{service.serviceCategories}</td>
                             </tr>)
                 }
                 </tbody>
