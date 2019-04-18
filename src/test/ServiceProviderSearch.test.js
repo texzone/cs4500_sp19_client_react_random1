@@ -6,7 +6,7 @@ import {shallow} from 'enzyme';
 
 test('service provider search renders correctly search fields', () => {
     const testRenderer = renderer.create(
-        <ServicesProviderSearch match={{params: {id: 123}}}/>)
+        <ServicesProviderSearch match={{params: {id: 1482}}}/>);
 
     let tree = testRenderer.toJSON();
     expect(tree).toMatchSnapshot();
@@ -22,7 +22,7 @@ test('service provider search renders correctly search fields', () => {
 
 describe('ServiceProviderSearch', () => {
     it('test load providers', () => {
-        const component = shallow(<ServicesProviderSearch match={{ params: { id: 123 }}}/>);
+        const component = shallow(<ServicesProviderSearch match={{ params: { id: 1482 }}}/>);
         component.instance().setState({
             service: mockService
         });
@@ -31,7 +31,23 @@ describe('ServiceProviderSearch', () => {
         component.instance().componentDidMount();
 
         expect(providers.length).toBe(3);
-        expect(component.instance().state.service).toExist();
+        expect(component.instance().state.service).toBeTruthy();
     })
 });
 
+// DOM Testing
+describe('ServiceProviderSearch', () => {
+    it('test load filters', () => {
+        const testRenderer = renderer.create(<ServicesProviderSearch match={{ params: { id: 1482 }}}/>);
+
+        const testInstance = testRenderer.root;
+
+        const filterColumn = testInstance.findByProps({className: 'col-3'});
+        expect(filterColumn.children).toEqual([]);
+
+        testRenderer.getInstance().setState({
+            service: mockService
+        });
+        expect(filterColumn.children.length).toBe(3);
+    })
+});

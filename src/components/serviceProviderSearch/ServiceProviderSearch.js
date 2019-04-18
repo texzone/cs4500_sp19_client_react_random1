@@ -1,6 +1,6 @@
 import React from "react";
 import ServiceService from "../../services/ServiceService";
-import mockCategory from "../../mock/data/service.providers.mock";
+import ServiceProvider from "./ServiceProvider";
 
 export default class ServicesProviderSearch extends React.Component {
 
@@ -30,10 +30,10 @@ export default class ServicesProviderSearch extends React.Component {
         let h5s = [];
         if (this.state.service.serviceQuestions != null)
             for (var i = 0; i < this.state.service.serviceQuestions.length; i++) {
-                let filter  =
+                let filter =
                     <div key={i + " question"}>
-                        <h5>{ this.state.service.serviceQuestions[i].question}</h5>
-                        { this.generateChoices(i) }
+                        <h5>{this.state.service.serviceQuestions[i].question}</h5>
+                        {this.generateChoices(i, this.state.service.serviceQuestions[i].question)}
                     </div>;
 
                 h5s.push(filter);
@@ -46,41 +46,26 @@ export default class ServicesProviderSearch extends React.Component {
         if (this.state.service.serviceProviders != null)
             for (var i = 0; i < this.state.service.serviceProviders.length; i++) {
                 var serviceProvider = this.state.service.serviceProviders[i];
-                let filter  =
-                    <div className="row np-flex-wrap" key={i + " provider"}>
-                        <div>
-                            <img height="200" width="200" src={`https://picsum.photos/300/200?image=${Math.floor(Math.random() * 100)}`}  alt="..."/>
-                        </div>
-                        <div>
-                            <a href=""><h5>{ serviceProvider.name}</h5></a>
-                            {/*<div> { serviceProvider.reviews.length } </div>*/}
-                            <div> { serviceProvider.yearsInBusiness + " year in business," +  serviceProvider.hires + " hires"} </div>
-                        </div>
-                        <div>
-                            <div>{ serviceProvider.price }</div>
-                            <button className="btn btn-primary">View Profile</button>
-                        </div>
-                    </div>;
+                let filter = <ServiceProvider serviceProvider={serviceProvider} i={i}/>;
                 h5s.push(filter);
             }
         return h5s;
     }
 
-    generateChoices(index) {
+    generateChoices(index, question) {
         let choices = [];
         for (var i = 0; i < this.state.service.serviceQuestions[index].choices.length; i++) {
             choices.push(<div key={i + " choice"}>
-                <input type="radio" name="bedroom" value={this.state.service.serviceQuestions[index].choices[i]}/> { this.state.service.serviceQuestions[index].choices[i].choice } <br/>
+                <input type="radio" name="bedroom"
+                       value={this.state.service.serviceQuestions[index].choices[i].choice.toString()}/> {this.state.service.serviceQuestions[index].choices[i].choice}
+                <br/>
             </div>)
         }
         return choices;
     }
 
     render() {
-
-
         return (<div>
-
             <div className="row">
                 <div className="input-group input-group-lg col-8">
                     <input type="text" placeholder="Search for providers" className="form-control"/>
@@ -99,11 +84,11 @@ export default class ServicesProviderSearch extends React.Component {
             </div>
             <div className="row">
                 <div className="col-3">
-                    { this.generateFilters() }
+                    {this.generateFilters()}
 
                 </div>
                 <div className="col-9">
-                    { this.generateProviders() }
+                    {this.generateProviders()}
                 </div>
             </div>
 
