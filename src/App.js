@@ -6,6 +6,7 @@ import Admin from './components/Admin'
 import HomeContainer from './components/containers/HomeContainer'
 import ServiceNavigator from './components/serviceNavigator/ServiceNavigator'
 import ServiceProviderNavigator from './components/ServiceProviderNavigator'
+import Profile from "./components/profile/Profile";
 
 class App extends Component {
   render() {
@@ -17,7 +18,8 @@ class App extends Component {
               <Link to="/register">Register</Link> |
               <Link to="/home">Home</Link> |
               <Link to="/services">Services</Link> |
-              <Link to="/admin">Admin</Link>
+              <Link to="/admin">Admin</Link> |
+              <Link to="/profile">Profile</Link>
               <br/>
               <br/>
               <br/>
@@ -41,6 +43,10 @@ class App extends Component {
                   path="/providers"
                   exact
                   component={ServiceProviderNavigator}/>
+              <Route
+                  path="/profile"
+                  exact
+                  component={Profile}/>
             </div>
           </Router>
         </div>
