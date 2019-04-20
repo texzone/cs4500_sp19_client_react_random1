@@ -12,6 +12,11 @@ export default class ServicesProviderSearch extends React.Component {
                 serviceName: '',
                 id: 1,
                 serviceQuestions: []
+            },
+            backupService: {
+                serviceName: '',
+                id: 1,
+                serviceQuestions: []
             }
         }
     }
@@ -20,7 +25,8 @@ export default class ServicesProviderSearch extends React.Component {
         this.serviceService.findServiceById(this.props.match.params.id)
             .then(serviceCategory => {
                     this.setState({
-                        service: serviceCategory
+                        service: serviceCategory,
+                        backupService: serviceCategory
                     });
                 }
             );
@@ -46,7 +52,7 @@ export default class ServicesProviderSearch extends React.Component {
         if (this.state.service.serviceProviders != null)
             for (var i = 0; i < this.state.service.serviceProviders.length; i++) {
                 var serviceProvider = this.state.service.serviceProviders[i];
-                let filter = <ServiceProvider serviceProvider={serviceProvider} i={i}/>;
+                let filter = <ServiceProvider serviceProvider={serviceProvider} key={i}/>;
                 h5s.push(filter);
             }
         return h5s;
@@ -68,7 +74,7 @@ export default class ServicesProviderSearch extends React.Component {
         return (<div>
             <div className="row">
                 <div className="input-group input-group-lg col-8">
-                    <input type="text" placeholder="Search for providers" className="form-control"/>
+                    <input type="text" placeholder="Search for providers" className="form-control" onChange={(e) => this.filterProviders(e.target.value)}/>
                     <input type="text" placeholder="Zip Code" className="form-control"/>
                     <button className="btn btn-primary">Search</button>
 
@@ -93,6 +99,27 @@ export default class ServicesProviderSearch extends React.Component {
             </div>
 
         </div>)
+    }
+
+    filterProviders(serviceProviderName) {
+        if (serviceProviderName !== "") {
+            let providers = this.state.service.serviceProviders;
+            const result = providers.filter(provider => this.contains(provider.name, serviceProviderName));
+            let newService = {...this.state.service};
+            newService.serviceProviders = result;
+            this.setState({
+                service: newService
+            })
+        } else {
+            this.setState({
+                service: this.state.backupService
+            })
+        }
+
+    }
+
+    contains(providerName = String, searchName) {
+        return providerName.toLowerCase().includes(searchName.toLowerCase());
     }
 
 }

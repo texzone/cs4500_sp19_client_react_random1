@@ -56,7 +56,7 @@ const Admin = () =>
                         exact
                         component={Users}/>
                     <Route
-                        path="/admin/services/:serviceName"
+                        path="/admin/services/:serviceId"
                         exact
                         component={ServicesProviderSearch}/>
                 </div>

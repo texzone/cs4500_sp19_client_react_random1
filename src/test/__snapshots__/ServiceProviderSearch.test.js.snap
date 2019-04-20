@@ -10,6 +10,7 @@ exports[`service provider search renders correctly search fields 1`] = `
     >
       <input
         className="form-control"
+        onChange={[Function]}
         placeholder="Search for providers"
         type="text"
       />

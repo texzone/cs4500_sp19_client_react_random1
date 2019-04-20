@@ -1,6 +1,6 @@
 import React from 'react';
-const ServiceProvider = ({serviceProvider, i}) =>
-    <div className="row np-flex-wrap" key={i + " provider"}>
+const ServiceProvider = ({serviceProvider, indexKey}) =>
+    <div className="row np-flex-wrap" key={indexKey}>
         <div>
             <img height="200" width="200" src={`https://picsum.photos/300/200?image=${Math.floor(Math.random() * 100)}`}  alt="..."/>
         </div>
