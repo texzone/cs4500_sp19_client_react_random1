@@ -1,6 +1,12 @@
 import React from 'react'
 import ServiceProviderService from "../services/ServiceProviderService";
 
+const states = ["AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI",
+                "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MP",
+                "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA",
+                "PR", "RI", "SC", "SD", "TN", "TX", "UM", "UT", "VA", "VI", "VT", "WA", "WI", "WV",
+                "WY"]
+
 class BusinessDetails extends React.Component {
     constructor(props) {
         super(props)
@@ -65,6 +71,7 @@ class BusinessDetails extends React.Component {
         const businessEmail = document.getElementById('email').value;
         const businessStreet = document.getElementById('business-street').value;
         const businessCity = document.getElementById('business-city').value;
+        const businessState = document.getElementById('business-state').value;
         const businessZip = document.getElementById('business-zip').value;
         const businessFacebook = document.getElementById('facebook').value;
         const businessInstagram = document.getElementById('instagram').value;
@@ -83,10 +90,12 @@ class BusinessDetails extends React.Component {
                 yearFounded: businessYear,
                 numEmployees: businessEmployees,
                 businessEmail: businessEmail,
-                street: businessStreet,
-                city : businessCity,
-               // state: businessState,
-                zipCode : businessZip,
+                businessAddress: {
+                    street: businessStreet,
+                    city : businessCity,
+                    state: businessState,
+                    zipCode : businessZip,
+                },
                 facebookLink : businessFacebook,
                 instaLink : businessInstagram,
                 twitterLink : businessTwitter,
@@ -153,11 +162,10 @@ class BusinessDetails extends React.Component {
                     <div className="col-6">
                         <br/>
                         <label htmlFor="first-name">State</label>
-                        <select className="form-control" >
-                            <option>MA</option>
-                            <option>NH</option>
-                            <option>NY</option>
-                            <option>CA</option>
+                        <select id = "business-state" className="form-control">
+                            {states.map((state, indx) =>
+                                <option value={state} selected={state === this.state.state}>{state}</option>
+                            )}
                         </select>
                     </div>
                     <div className="col-6">
@@ -200,7 +208,8 @@ class BusinessDetails extends React.Component {
                         <input
                             id="facebook"
                             placeholder="Enter Facebook URL"
-                            className="form-control"/>
+                            className="form-control"
+                            defaultValue={this.state.facebook}/>
                     </div>
                     <div className="col-12">
                         <br/>
@@ -208,7 +217,8 @@ class BusinessDetails extends React.Component {
                         <input
                             id="instagram"
                             placeholder="Enter Instagram URL"
-                            className="form-control"/>
+                            className="form-control"
+                            defaultValue={this.state.instagram}/>
                     </div>
                     <div className="col-12">
                         <br/>
@@ -216,7 +226,8 @@ class BusinessDetails extends React.Component {
                         <input
                             id="twitter"
                             placeholder="Enter Twitter</ URL"
-                            className="form-control"/>
+                            className="form-control"
+                            defaultValue={this.state.twitter}/>
                     </div>
                 </div>
                 <br/>
