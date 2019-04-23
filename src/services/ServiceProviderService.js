@@ -21,4 +21,17 @@ export default class ServiceProviderService {
         fetch(MIDDLE_TIER_URL + "/api/service_providers/filter?provider=" + filterParams.provider + "&zipCode="
               + filterParams.zipCode)
             .then(response => response.json())
+    updateServiceProvider = (serviceProvider) => {
+        return fetch(MIDDLE_TIER_URL + "/api/service_providers/" + serviceProvider.id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(serviceProvider)
+        }).then(response => {
+            console.log(response)
+            return response.json();
+        });
+    }
+
 }

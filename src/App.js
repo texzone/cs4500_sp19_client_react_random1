@@ -6,6 +6,9 @@ import Admin from './components/Admin'
 import HomeContainer from './components/containers/HomeContainer'
 import ServiceNavigator from './components/serviceNavigator/ServiceNavigator'
 import ServiceProviderNavigator from './components/ServiceProviderNavigator'
+import BusinessDetails from './components/BusinessDetails'
+import Login from './components/login/login'
+import ServiceProviderSearch from "./components/serviceProviderSearch/ServiceProviderSearch"
 import Profile from "./components/profile/Profile";
 
 class App extends Component {
@@ -19,6 +22,7 @@ class App extends Component {
               <Link to="/home">Home</Link> |
               <Link to="/services">Services</Link> |
               <Link to="/admin">Admin</Link> |
+              <Link to="/login">Login</Link> |
               <Link to="/profile">Profile</Link>
               <br/>
               <br/>
@@ -43,6 +47,18 @@ class App extends Component {
                   path="/providers"
                   exact
                   component={ServiceProviderNavigator}/>
+              <Route
+                  path="/login"
+                  exact
+                  component={Login}/>
+              <Route
+                  path="/businessDetails/:id"
+                  exact
+                  component={BusinessDetails}/>
+              <Route
+                  path="/services/:id"
+                  exact
+                  component={ServiceProviderSearch}/>
               <Route
                   path="/profile"
                   exact
