@@ -53,6 +53,8 @@ class App extends Component {
                   exact
                   component={BusinessDetails}/>
             </div>
+      </Router>
+   </div>
         );
     }
 }
