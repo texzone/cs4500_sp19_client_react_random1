@@ -28,7 +28,7 @@ class ServiceCategoryPills extends React.Component {
                         .map(serviceCategory =>
                                  <li className="nav-item"  key={serviceCategory.id}>
                                      <a className="nav-link btn-lg text-center"
-                                        href={"/services/"+ serviceCategory.id}>
+                                        href={"/services#"+ serviceCategory.id}>
                                          <i className="fa fa-home"/>
                                          <br/>
                                          {serviceCategory.title}

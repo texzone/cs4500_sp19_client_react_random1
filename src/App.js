@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import Register from './components/register/Register'
@@ -6,6 +6,7 @@ import Admin from './components/Admin'
 import HomeContainer from './components/containers/HomeContainer'
 import ServiceNavigator from './components/serviceNavigator/ServiceNavigator'
 import ServiceProviderNavigator from './components/ServiceProviderNavigator'
+import BusinessDetails from './components/BusinessDetails'
 import Login from './components/login/login'
 
 class App extends Component {
@@ -47,11 +48,15 @@ class App extends Component {
                   path="/login"
                   exact
                   component={Login}/>
+              <Route
+                  path="/businessDetails/:id"
+                  exact
+                  component={BusinessDetails}/>
             </div>
           </Router>
         </div>
-    );
-  }
+        );
+    }
 }
 
 export default App;
