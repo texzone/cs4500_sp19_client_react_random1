@@ -5,7 +5,6 @@ import Register from './components/register/Register'
 import Admin from './components/Admin'
 import HomeContainer from './components/containers/HomeContainer'
 import ServiceNavigator from './components/serviceNavigator/ServiceNavigator'
-import ServiceProviderNavigator from './components/ServiceProviderNavigator'
 import BusinessDetails from './components/BusinessDetails'
 import Login from './components/login/login'
 import ServiceProviderSearch from "./components/serviceProviderSearch/ServiceProviderSearch"
@@ -41,10 +40,6 @@ class App extends Component {
                   path="/admin"
                   exact
                   component={Admin}/>
-              <Route
-                  path="/providers"
-                  exact
-                  component={ServiceProviderNavigator}/>
               <Route
                   path="/login"
                   exact
