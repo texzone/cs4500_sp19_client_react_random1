@@ -17,20 +17,28 @@ export default class ServicesProviderSearch extends React.Component {
                 serviceName: '',
                 id: 1,
                 serviceQuestions: []
-            }
+            },
+            serviceProviders: []
         }
     }
 
     componentDidMount() {
+        if(this.props.match.params.id == -1) {
+          this.setState({
+            serviceProviders: this.props.location.state.serviceProviders
+          })
+        } else {
         this.serviceService.findServiceById(this.props.match.params.id)
             .then(serviceCategory => {
                     this.setState({
                         service: serviceCategory,
-                        backupService: serviceCategory
+                        backupService: serviceCategory,
+                        serviceProviders: serviceCategory.serviceProviders
                     });
                 }
             );
-    }
+          }
+        }
 
     generateFilters() {
         let h5s = [];
@@ -49,9 +57,9 @@ export default class ServicesProviderSearch extends React.Component {
 
     generateProviders() {
         let h5s = [];
-        if (this.state.service.serviceProviders != null)
-            for (var i = 0; i < this.state.service.serviceProviders.length; i++) {
-                var serviceProvider = this.state.service.serviceProviders[i];
+        if (this.state.serviceProviders.length != 0)
+            for (var i = 0; i < this.state.serviceProviders.length; i++) {
+                var serviceProvider = this.state.serviceProviders[i];
                 let filter = <ServiceProvider serviceProvider={serviceProvider} key={i}/>;
                 h5s.push(filter);
             }
@@ -103,16 +111,14 @@ export default class ServicesProviderSearch extends React.Component {
 
     filterProviders(serviceProviderName) {
         if (serviceProviderName !== "") {
-            let providers = this.state.service.serviceProviders;
+            let providers = this.state.serviceProviders;
             const result = providers.filter(provider => this.contains(provider.name, serviceProviderName));
-            let newService = {...this.state.service};
-            newService.serviceProviders = result;
             this.setState({
-                service: newService
+                serviceProviders: result
             })
         } else {
             this.setState({
-                service: this.state.backupService
+               serviceProviders: []
             })
         }
 
