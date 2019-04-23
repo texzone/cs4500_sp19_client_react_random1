@@ -60,13 +60,8 @@ class App extends Component {
             </div>
           </Router>
         </div>
-<<<<<<< HEAD
-        );
-    }
-=======
     );
   }
->>>>>>> Added search & filter functionality
 }
 
 export default App;
