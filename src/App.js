@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import Register from './components/register/Register'
@@ -9,6 +9,7 @@ import ServiceProviderNavigator from './components/ServiceProviderNavigator'
 import BusinessDetails from './components/BusinessDetails'
 import Login from './components/login/login'
 import ServiceProviderSearch from "./components/serviceProviderSearch/ServiceProviderSearch"
+import Profile from "./components/profile/Profile";
 
 class App extends Component {
   render() {
@@ -21,7 +22,8 @@ class App extends Component {
               <Link to="/home">Home</Link> |
               <Link to="/services">Services</Link> |
               <Link to="/admin">Admin</Link> |
-              <Link to="/login">Login</Link>
+              <Link to="/login">Login</Link> |
+              <Link to="/profile">Profile</Link>
               <br/>
               <br/>
               <br/>
@@ -57,6 +59,10 @@ class App extends Component {
                   path="/services/:id"
                   exact
                   component={ServiceProviderSearch}/>
+              <Route
+                  path="/profile"
+                  exact
+                  component={Profile}/>
             </div>
           </Router>
         </div>
