@@ -1,0 +1,101 @@
+{
+  "id": 1482,
+  "serviceName": "House Organizing",
+  "serviceProviders": [
+    {
+      "id": 12,
+      "name": "Cristina House Cleaning",
+      "zipCode": null,
+      "rating": 4.4,
+      "yearsInBusiness": 7,
+      "price": "$20",
+      "hires": 10,
+      "employees": 2,
+      "backgroundChecked": false,
+      "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing."
+    },
+    {
+      "id": 22,
+      "name": "Cristina House Cleaning",
+      "zipCode": null,
+      "rating": 4.4,
+      "yearsInBusiness": 7,
+      "price": "$20",
+      "hires": 10,
+      "employees": 2,
+      "backgroundChecked": false,
+      "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing."
+    },
+    {
+      "id": 32,
+      "name": "Cristina House Cleaning",
+      "zipCode": null,
+      "rating": 4.4,
+      "yearsInBusiness": 7,
+      "price": "$20",
+      "hires": 10,
+      "employees": 2,
+      "backgroundChecked": false,
+      "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing."
+    }
+  ],
+  "serviceQuestions": [
+    {
+      "id": 242,
+      "question": "Number of bedrooms",
+      "type": "MULTIPLE",
+      "choices": [
+        {
+          "id": 692,
+          "choice": "3 bedroom"
+        },
+        {
+          "id": 682,
+          "choice": "2 bedroom"
+        },
+        {
+          "id": 672,
+          "choice": "1 bedroom"
+        }
+      ]
+    },
+    {
+      "id": 252,
+      "question": "Number of bedrooms",
+      "type": "MULTIPLE",
+      "choices": [
+        {
+          "id": 702,
+          "choice": "1 bedroom"
+        },
+        {
+          "id": 712,
+          "choice": "2 bedroom"
+        },
+        {
+          "id": 722,
+          "choice": "3 bedroom"
+        }
+      ]
+    },
+    {
+      "id": 262,
+      "question": "Number of bedrooms",
+      "type": "MULTIPLE",
+      "choices": [
+        {
+          "id": 732,
+          "choice": "1 bedroom"
+        },
+        {
+          "id": 742,
+          "choice": "2 bedroom"
+        },
+        {
+          "id": 752,
+          "choice": "3 bedroom"
+        }
+      ]
+    }
+  ]
+}

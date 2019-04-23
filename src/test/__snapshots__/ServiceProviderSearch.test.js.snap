@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`service provider search renders correctly search fields 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="input-group input-group-lg col-8"
+    >
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search for providers"
+        type="text"
+      />
+      <input
+        className="form-control"
+        placeholder="Zip Code"
+        type="text"
+      />
+      <button
+        className="btn btn-primary"
+      >
+        Search
+      </button>
+    </div>
+    <div
+      className="col-4 row"
+    >
+      <div
+        className="col-11 text-right"
+      >
+        <a
+          href="#"
+        >
+          Sign up
+        </a>
+      </div>
+      <div
+        className="col-1"
+      >
+        <a
+          href="#"
+        >
+          Log in
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-3"
+    />
+    <div
+      className="col-9"
+    />
+  </div>
+</div>
+`;

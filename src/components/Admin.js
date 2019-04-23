@@ -10,6 +10,7 @@ import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
 import ServiceAnswerDetails from "./ServiceAnswerDetails";
 import ServiceAnswer from "./ServiceAnswer";
+import ServicesProviderSearch from "./serviceProviderSearch/ServiceProviderSearch";
 const servicesService = ServiceService.getInstance()
 
 const Admin = () =>
@@ -67,6 +68,10 @@ const Admin = () =>
                         path="/admin/users"
                         exact
                         component={Users}/>
+                    <Route
+                        path="/admin/services/:serviceId"
+                        exact
+                        component={ServicesProviderSearch}/>
                 </div>
             </div>
         </Router>
