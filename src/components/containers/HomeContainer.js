@@ -15,6 +15,7 @@ class HomeContainer extends React.Component {
       }
 
     this.searchProviders = this.searchProviders.bind(this)
+    this.clearInputs = this.clearInputs.bind(this)
 
   }
 
@@ -33,12 +34,27 @@ class HomeContainer extends React.Component {
         )
   }
 
+  clearInputs() {
+    var providerInput = document.getElementById('provider_input');
+    var zipCodeInput = document.getElementById('zip_code_input');
+    providerInput.value = ""
+    zipCodeInput.value = ""
+  }
+
   render() {
-      if(this.state.toProviders === true){
-        return <Redirect to={{
-            pathname: '/providers',
-            state: { serviceProviders: this.state.resultProviders }
-        }}/>
+      if(this.state.toProviders === true) {
+        if(this.state.resultProviders.length > 0) {
+          return <Redirect to={{
+              pathname: '/services/-1',
+              state: { serviceProviders: this.state.resultProviders }
+          }}/>
+        } else {
+          alert('No results found. Please try again.')
+          this.clearInputs()
+          this.setState({
+            toProviders: false
+          })
+        }
       }
       return (
         <div>
