@@ -3,7 +3,7 @@ import ServiceCategoryList from './ServiceCategoryList'
 import ServiceCategorySectionList from './ServiceCategorySectionList'
 import ServiceCategoryService from '../../services/ServiceCategoryService'
 import serviceCategories from '../../mock/data/service_categories.mock.json'
-
+import serviceCards from './ServiceCards'
 const ServiceNavigator = () =>
     <div>
         <div className="row">
